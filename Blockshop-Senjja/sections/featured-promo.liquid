@@ -1,0 +1,200 @@
+<div class="widgets">
+  <div class="featured-promo">
+    <div class="row{% if section.blocks.size == 0 %} empty{% endif %}">
+      {%- assign column_count = section.blocks.size -%}
+
+      {% if column_count > 0 %}
+        {% if column_count == 1 %}
+          {% assign column_class = 'large-12' %}
+        {% elsif column_count == 2 %}
+          {% assign column_class = 'large-6' %}
+        {% endif %}
+      {% endif %}
+
+      {% for block in section.blocks limit: column_count %}
+
+        {% if block.type == 'text' %}
+          {% assign widget_text_align = block.settings.home-featured-promo-text-align %}
+          <!-- NIGEL --> 
+          {% assign column_class = 'large-5' %}
+        {%elsif block.type == "video" %}
+          <!-- NIGEL --> 
+          {% assign column_class = 'large-7' %}
+        {% endif %}
+
+        <div class="columns{% if block.type == 'text' %} {{ widget_text_align}}{% endif %} {{ column_class }}" {{ block.shopify_attributes }}>
+
+          {% case block.type %}
+            {% when 'text' %}
+              {% if block.settings.home-featured-promo-title.size > 0 %}
+                <h3 class="title">{{ block.settings.home-featured-promo-title }}</h3>
+              {% endif %}
+
+              <div class="description">
+                {% if block.settings.home-featured-promo-description.size > 0 %}
+                  <p class="textarea">{{ block.settings.home-featured-promo-description | escape }}</p>
+                {% endif %}
+
+                {% if block.settings.home-featured-promo-link-text.size > 0 %}
+                  <p class="call-to-action">
+                    <a class="button" href="{{ block.settings.home-featured-promo-link-url }}">
+                      {{ block.settings.home-featured-promo-link-text }}
+                    </a>
+                  <p>
+                {% endif %}
+              </div>
+
+            {% when 'image' %}
+              {% comment %} Block settings {% endcomment %}
+              {% assign widget_image_link = block.settings.home-featured-promo-image-link %}
+
+              {% if block.settings.image == blank %}
+                {% include 'placeholder-image' %}
+              {% else %}
+                {% assign widget_alt = block.settings.image.alt | default: '' %}
+
+                {% if widget_image_link != empty %}
+                  {{ block.settings.image | img_url: '1400x800' | img_tag: widget_alt | link_to: widget_image_link }}
+                {% else %}
+                  {{ block.settings.image | img_url: '1400x800' | img_tag: widget_alt }}
+                {% endif %}
+              {% endif %}
+
+            {% when 'video' %}
+              {% comment %} Block settings {% endcomment %}
+              <div class="vimeo-wrapper">
+                <div class="flex-video">
+                  {% if block.settings.video_url.size > 0 %}
+                    {% if block.settings.video_url.type == "youtube" %}
+                      <iframe width="560" height="315"
+                      src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0"
+                      frameborder="0" allowfullscreen></iframe>
+                    {% elsif block.settings.video_url.type == "vimeo" %}
+                      <iframe width="560" height="315"
+                      src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}"
+                      frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+          {% endcase %}
+        </div>
+      {% endfor %}
+
+      {% if column_count == 0 %}
+        {% include 'snippet-no-blocks' %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured promotion",
+  "class": "section--featured-promotion",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "home-featured-promo-title",
+          "label": "Title",
+          "default": "Add your title"
+        },
+        {
+          "type": "textarea",
+          "id": "home-featured-promo-description",
+          "label": "Description",
+          "default": "Add your description"
+        },
+        {
+          "type": "select",
+          "id": "home-featured-promo-text-align",
+          "label": "Alignment",
+          "options": [
+            {
+              "value": "text-left",
+              "label": "Left"
+            },
+            {
+              "value": "text-center",
+              "label": "Center"
+            },
+            {
+              "value": "text-right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "Call to action button"
+        },
+        {
+          "type": "text",
+          "id": "home-featured-promo-link-text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "home-featured-promo-link-url",
+          "label": "Link to"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "id": "video_url",
+          "type": "video_url",
+          "label": "YouTube or Vimeo link",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "home-featured-promo-image-link",
+          "label": "Link to"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured promotion",
+      "category": "Promotional",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "home-featured-promo-title": "Add your title",
+            "home-featured-promo-description": "Add your description"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

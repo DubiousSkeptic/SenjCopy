@@ -1,0 +1,579 @@
+<div class="section-product-template"
+     data-product-zoom-enabled="{{ section.settings.product-zoom-enabled }}"
+     data-product-modal-enabled="{{ section.settings.product-modal-enabled }}"
+     data-product-size-chart-option="{{ section.settings.product-size-chart-option }}"
+     data-product-low-in-stock-amount="{{ section.settings.product-low-in-stock-amount }}"
+     data-product-size-chart-enabled="{{ section.settings.product-size-chart-enabled }}">
+
+  <!-- NIGEL OMIT BREADCRUMBS AND NEXT/PREVIOUS ROW 
+  <header>
+    <div class="row show-for-medium-up">
+      <div class="columns">
+        {% if section.settings.product-breadcrumbs-show %}
+          {% include 'snippet-breadcrumbs' %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="previous-next row">
+      {% if collection %}
+        {% if collection.previous_product or collection.next_product %}
+          <div class="previous columns large-3 small-6">
+            {% if collection.previous_product %}
+              <a class="left" title="{{ 'products.previous_item' | t }}" href="{{ collection.previous_product}}">
+                {% include 'snippet-symbol' with 'arrow-left' %} {{ 'products.previous_item' | t }}
+              </a>
+            {% endif %}
+            <div class="border-decoration show-for-large-up"></div>
+          </div>
+
+          <div class="next columns large-3 large-offset-6 small-6">
+            {% if collection.next_product %}
+              <a class="right" title="{{ 'products.next_item' | t }}" href="{{ collection.next_product}}">{{ 'products.next_item' | t }}
+                {% include 'snippet-symbol' with 'arrow-right' %}
+              </a>
+            {% endif %}
+            <div class="border-decoration show-for-large-up"></div>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </header>
+  --> 
+
+  <article class="row" itemscope itemtype="http://schema.org/Product">
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}" />
+    <meta itemprop="image" content="{{ product.featured_image.src | product_img_url: 'grande' }}" />
+
+    <div class="positions active hide-for-js">
+      
+      /* Title */
+      <div data-position="title-vendor">
+        <h1 class="page-title" itemprop="name">{{ product.title }}</h1>
+        {% if settings.brand-show %}
+          {% assign product_vendor_handle = product.vendor | handle %}
+          {% if collections[product_vendor_handle].handle == product_vendor_handle %}
+            {% assign vendor_url = collections[product_vendor_handle].url %}
+          {% else %}
+            {% assign vendor_url = product.vendor | url_for_vendor %}
+          {% endif %}
+          <h2 class="vendor" itemprop="brand">{{ product.vendor | link_to: vendor_url }}</h2>
+        {% endif %}
+
+      </div>
+    
+
+      /* Price */
+      <div data-position="prices">
+        <div class="prices">
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+
+            {% if product.available %}
+              <link itemprop="availability" href="http://schema.org/InStock" />
+            {% else %}
+              <link itemprop="availability" href="http://schema.org/OutOfStock" />
+            {% endif %}
+
+            <p class="pre-order-and-save">Reg $19.99. Pre-order and save.</p>
+            <p class="pre-order-find-out-more"><a href="{{shop.url}}/pages/preorder">Why pre-order?</a></p>
+            <p>
+              {% assign variant = product.selected_or_first_available_variant %}
+              <span class="actual-price" itemprop="price">{{ variant.price | money }}</span> <span class="compare-price">{% if variant.price < variant.compare_at_price %}{{ 'products.was' | t }} {{ variant.compare_at_price | money }}{% endif %}</span>
+            </p>
+          </div>
+          <!--
+          <div class="preorder-notice">
+              <p><b>Don't wait.</b> We are currently taking orders for delivery in approximately 3 months.
+              Order now to reserve your delivery.</p>
+          </div>
+          --> 
+          
+        <ul class="product-description-bullets">
+            <li>Pre-order for delivery in 8 weeks.</li>
+            <li>Free shipping in Canada & USA.</li>
+            <li>Lasts 6-10 uses or more.</li>
+            <li>100% satisfaction guaranteed.</li>
+            <li>Not sure about size? Don't worry. If you get it wrong we'll gladly send another size free until it's right.</li>
+        </ul>
+        </div>
+      </div>
+
+      /* Photos */ 
+      <div data-position="photos">
+        <div class="photos" >
+          <div class="container clearfix">
+
+            {% for image in product.images %}
+            <a class="photo" href="{{ image.src | product_img_url: '1024x1024' }}" data-zoom="{{ image.src | product_img_url: '1024x1024' }}" rel="gallery" data-image-id="{{ image.id }}">
+              <img src="{{ image.src | product_img_url: 'grande' }}" alt="{{ image.alt | escape }}" />
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div data-position="thumbs">
+        <div class="thumbs">
+          {% if product.images.size > 1 %}
+            <ul class="clearfix row">
+              {% for image in product.images %}
+                <li class="thumb">
+                  <img src="{{ image.src | product_img_url: 'compact' }}" alt="{{ image.alt | escape }}" />
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+
+      <div data-position="cart-form">
+        <form class="cart-form" action="/cart/add" method="post" enctype="multipart/form-data">
+
+         {% comment %}
+         <!-- Adding line items - https://docs.shopify.com/manual/configuration/store-customization/page-specific/product-page/get-customization-information-for-products -->
+         <div>
+            <label for="line-item-1">Line Item 1</label>
+            <input type="text" id="line-item-1" name="properties[line-item-1]">
+          </div>
+
+          <div>
+            <label for="line-item-2">Line Item 2</label>
+            <input type="text" id="line-item-2" name="properties[line-item-2]">
+          </div>
+          {% endcomment %}
+          
+        <!-- Variants --> 
+          <div class="variants {% unless product.variants.size > 1 %}hidden{% endunless %}">
+          
+            {% comment %}
+            <!-- Swatch code from Shopify example 
+            {% if product.variants.size > 1 %}
+                {% include 'swatch' with 'Waist Size' %}
+            {% endif %}
+            {% endcomment %}
+          
+            {% if product.options.size == 1 %}
+                <label class="product-option-name">{{ product.options.first }}</label>
+            {% endif %}
+            
+            <select id="variant-listbox" name="id" class="large variant-listbox">
+              {% for variant in product.variants %}
+                <option class="product-option"  data-sku="{{ variant.sku }}" {% if variant.inventory_quantity <= 0 and variant.available == false %}DISABLED {% endif %}{% if variant == product.selected_or_first_available_variant %}selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+              {% endfor %} 
+            </select>
+            
+          </div>
+          {% include 'snippet-product-low-in-stock' %}
+          <div class="quanity-cart-row clearfix">
+            {% include 'snippet-quantity' %}
+            <div class="add-to-cart">
+              <input type="submit" name="add" id="add" value="{{ 'products.add_to_cart' | t }}" class="purchase button">
+            </div>
+          </div>
+        </form>
+
+
+        {% include 'snippet-product-unavailable' %}
+
+      </div>
+
+      <div data-position="description">
+        <div class="description product-description-div" >
+          <div itemprop="description" class="rte-content">
+            {{ product.description }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Positions & Ordering -->
+
+    <!-- Mobile -->
+    <div class="positions show-for-small columns">
+      <div data-position="title-vendor"></div>
+      <div data-position="prices"></div>
+      <div data-position="photos"></div>
+      <div data-position="thumbs" class="text-center"></div>
+      <div data-position="cart-form"></div>
+      <div data-position="description"></div>
+    </div>
+
+    <!-- Medium Screens -->
+    <div class="positions show-for-medium-only">
+      <div class="columns large-4">
+          <div data-position="title-vendor"></div>
+          <div data-position="prices"></div>
+          <div data-position="cart-form"></div>
+          <div data-position="description"></div>
+      </div>
+
+      <div class="columns large-7">
+        <div data-position="photos"></div>
+        <div data-position="thumbs" class="text-center"></div>
+      </div>
+
+      <div class="columns large-1">
+          &nbsp;
+      </div>
+
+    </div>
+
+    
+    <!-- Large Screens -->
+    <div class="positions show-for-large-up">
+      <div class="columns large-1" style="width:8%">&nbsp;
+      </div>
+      <div class="columns large-4">
+          <div data-position="title-vendor"></div>
+          <div data-position="prices"></div>
+          <div data-position="cart-form"></div>
+          <div data-position="description"></div>
+      </div>
+
+      <div class="columns large-6">
+        <div data-position="photos"></div>
+         <div data-position="thumbs" class="text-center"></div>
+      </div>
+
+      <div class="columns large-1" style="width:15%">
+          &nbsp;
+      </div>
+    </div>
+  </article>
+
+</div> <!-- .section-product-template -->
+
+
+
+<!-- NIGEL OMIT SIMILAR PRODUCTS BY REPLACING section.settings.product-similar-products-show WITH 'false' --> 
+{% if false %}
+  {% include 'snippet-related-products' %}
+{% endif %}
+
+
+{% if section.settings.product-modal-enabled %}
+  <div class="modal">
+    <div class="loading"></div>
+    <a tabindex="0" class="control prev slider-left">
+      {% include 'snippet-symbol' with 'chevron-left' %}
+    </a>
+    <a tabindex="0" class="control next slider-right">
+      {% include 'snippet-symbol' with 'chevron-right' %}
+    </a>
+    <button class="popup-modal-close">✕</button>
+    <div class="slides"></div>
+  </div>
+  <div class="modal-mask"></div>
+{% endif %}
+
+{% if product.title  == 'Senjja' %}
+   {% include 'snippet-product-details-senjja' %} 
+{% endif %}
+
+<script>
+  // variables to pass to shop.js
+  var product_title = '{{ product.title | escape }}';
+  var product_variant_size = {{ product.variants.size }};
+  var product_options_size = {{ product.options.size }};
+  var product_options_first = '{{ product.options.first | escape }}';
+  var product_json = {{ product | json }};
+  var product_language_was = '{{ 'products.was' | t | escape }}';
+
+  var selectCallback = function(variant, selector) {
+    theme.variantSelected(variant, selector);
+    // add your selectCallback code here...
+    
+    // BEGIN SWATCHES
+        if (variant) {
+            var form = jQuery('#' + selector.domIdPrefix).closest('form');
+            for (var i=0,length=variant.options.length; i<length; i++) {
+            var radioButton = form.find('.swatch[data-option-index="' + i + '"] :radio[value="' + variant.options[i] +'"]');
+                if (radioButton.size()) {
+                  radioButton.get(0).checked = true;
+                }
+            }
+        }
+    // END SWATCHES
+  };
+
+  theme.products = {
+    size_chart: {
+      label: '{{ "products.size_chart" | t }}'
+    },
+    low_in_stock: {
+      one: '{{ "products.low_in_stock" | t: count: 1 }}',
+      other: '{{ "products.low_in_stock" | t: count: 2 }}'
+    }
+  };
+  
+
+  jQuery(function($) {
+    function setOptionSelectors() {
+      var optionSelectors = new Shopify.OptionSelectors("variant-listbox", {
+        product: {{ product | json }},
+        onVariantSelected: selectCallback,
+        enableHistoryState: true
+      });
+      
+    }
+
+    $(document).on("set-option-selectors", setOptionSelectors);
+    setOptionSelectors();
+ 
+  });
+  
+  
+  
+  
+</script>
+
+{% if section.settings.product-size-chart-enabled %}
+  {% include 'snippet-size-chart' %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section--products",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "product-breadcrumbs-show",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-unavailable-form-show",
+      "label": "Show notification form when product is unavailable"
+    },
+    {
+      "type": "checkbox",
+      "id": "product-modal-enabled",
+      "label": "Enable modal popup",
+      "default": true,
+      "info": "Triggers when you click the main image"
+    },
+    {
+      "type": "checkbox",
+      "id": "product-zoom-enabled",
+      "label": "Enable product zoom",
+      "default": true,
+      "info": "Triggers when you roll your mouse over the main image"
+    },
+    {
+      "type": "select",
+      "id": "product-low-in-stock-amount",
+      "label": "Notify when low in stock with",
+      "options": [
+        {
+          "value": "false",
+          "label": "Don't show"
+        },
+        {
+          "value": "1",
+          "label": "1 item left"
+        },
+        {
+          "value": "3",
+          "label": "3 items or less"
+        },
+        {
+          "value": "5",
+          "label": "5 items or less"
+        },
+        {
+          "value": "10",
+          "label": "10 items or less"
+        }
+      ],
+      "default": "false",
+      "info": "Updates for each variant"
+    },
+    {
+      "type": "header",
+      "content": "Positions"
+    },
+    {
+      "type": "paragraph",
+      "content": "An item in the left and right column is required. Screens under 1280px wide will rearrange the columns automatically to prevent content from getting squished."
+    },
+    {
+      "type": "select",
+      "id": "product-position-title-vendor",
+      "label": "Title and brand\/vendor",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "product-position-price",
+      "label": "Price",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "product-position-form",
+      "label": "Add to cart form",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "product-position-thumbs",
+      "label": "Thumbnails",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "product-position-description",
+      "label": "Description",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "header",
+      "content": "Size chart"
+    },
+    {
+      "type": "checkbox",
+      "id": "product-size-chart-enabled",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "product-size-chart-option",
+      "label": "Link from option",
+      "default": "size"
+    },
+    {
+      "type": "page",
+      "id": "product-size-chart-page-content",
+      "label": "Page content [(?)](http:\/\/support.troopthemes.com\/article\/230-linking-page-content-in-settings)"
+    },
+    {
+      "type": "header",
+      "content": "Social media panel"
+    },
+    {
+      "type": "checkbox",
+      "id": "product-share-this-show",
+      "label": "Show",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-share-twitter",
+      "label": "Share on Twitter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-share-facebook",
+      "label": "Share on Facebook",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-share-pinterest",
+      "label": "Share on Pinterest",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-share-tumblr",
+      "label": "Share on Tumblr",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product-share-google",
+      "label": "Share on Google Plus",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Similar products"
+    },
+        {
+      "type": "checkbox",
+      "id": "product-similar-products-show",
+      "label": "Show",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product-similar-products-amount",
+      "label": "Amount",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        }
+      ],
+      "default": "3"
+    }
+  ]
+}
+{% endschema %}

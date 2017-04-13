@@ -1,0 +1,3 @@
+{% include "snippet-transparent" with '1x1'  %}
+{% capture collection_type %}collection-{{placeholder-collection}}{% endcapture %}
+{{ collection_type | placeholder_svg_tag: 'placeholder-icon' }}

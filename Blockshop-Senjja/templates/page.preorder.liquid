@@ -1,0 +1,172 @@
+<div class="row full-width content-panel pre-order-page-banner">
+    <div class="column large-12 pre-order-page-banner-caption">
+        <div class="pre-order-page-banner-caption-wrapper">
+            <h1>Support the Senjja project</h1>
+            <p>We're asking for your help to make the world a little bit better.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row full-width pre-order-content">
+    <div class="column large-12">
+        <h1>About this project</h1>
+        <p>We believe the best solutions to big problems are sometimes the simplest. We believe
+        that sexual wellness is about more than just self gratification, that it's about making people
+        all they can be. We believe that helping men perform at their peak helps
+        them, their partners and their families have better, healthier lives. 
+        And we believe that, for many men, the very best way to achieve amazing sexual performance is with the uniquely simple principles behind Senjja.</p> 
+        <p>That's why we're working hard to bring Senjja to the market. And we're nearly there. Over 
+        the past two years we've prototyped and tested Senjja, secured patents and
+        completed clinical trials. Now we're ready to begin manufacturing and marketing Senjja worldwide.</p>
+        <p>We need your help because every pre-order counts. Here's how:</p>
+        <ul>
+            <li>Pre-orders give us additional working capital for manufacturing, marketing and clinical trials, which cost hundreds of thousands of dollars.</li>
+            <li>Pre-orders tell us that we're on the right track, that our message and product resonates with 
+            real world customer. And pre-orders give our investors 
+            security so that we can obtain more investment while giving away less of the company.</li>
+            <li>Early customers are the greatest source of feedback and suggestions for product improvement. 
+            While always respecting your privacy, if you choose to communicate with us about your Senjja experiences, 
+            good and bad, it helps to make Senjja the very best possible product.</li>
+        </ul>
+        <p>To show our thanks for your help, we're offing Senjja at our lowest possible price of just $12.99, a seven dollar
+        saving off the regular price of $19.99. And we'll reserve your place in line to ensure we ship Senjja to you
+        at the earliest possible moment.</p> 
+    </div>
+</div>
+
+
+<div class="row full-width pre-order-timeline-row">
+    <div class="column centered-panel-no-padding">
+        <h1>Timeline</h1> 
+    </div>
+    <div class="column large-12 pre-order-timeline">
+        <ul>
+            <li>
+                <img src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Feb 2003</p>
+                <p class="timeline-title">Senjja invented</p>
+                <p class="timeline-description">The idea behind Senjja started back in 2003. Positive results convinced
+                us Senjja needed to be shared with the world.</p>
+            </li>
+            <li>
+                <img src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Jan 2015</p>
+                <p class="timeline-title">Company founded</p>
+                <p class="timeline-description">Founded Exia Biomedical with a mission to help people get the most out of life through biomedical innovation.</p>
+            </li>
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Jun 2015</p>
+                <p class="timeline-title">Working prototype</p>
+                <p class="timeline-description">First prototype ready for early trials.</p>
+            </li>
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Dec 2015</p>
+                <p class="timeline-title">Patent pending</p>
+                <p class="timeline-description">Patents filed to protect Senjja from copying.</p>
+            </li> 
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Mar 2016</p>
+                <p class="timeline-title">Clinical trials</p>
+                <p class="timeline-description">Positive clinical trial results prove Senjja works for men with a broad range of
+                needs from severe ED to just looking for an enhanced sexual experience.</p>
+            </li> 
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Jul 2016</p>
+                <p class="timeline-title">Commercialization</p>
+                <p class="timeline-description">Commercialization plans begin with objective of launching Senjja worldwide.</p>
+            </li> 
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Feb 2017</p>
+                <p class="timeline-title">Manufacturing</p>
+                <p class="timeline-description">Several manufacturers evaluated and final manufacturer chosen for production.</p>
+            </li> 
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBullet.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Apr 2017</p>
+                <p class="timeline-title">Pre-Orders</p>
+                <p class="timeline-description">Web site launches and begins taking preorders.</p>
+            </li> 
+            <li>
+                <img class="timeline-image" src="{{ 'TimelineBulletFuture.png' | file_img_url: '20x20'}}"/>
+                <p class="timeline-date">Jun 2017</p>
+                <p class="timeline-title">Shipping</p>
+                <p class="timeline-description">Senjja begins shipping to customers, starting with pre-order customers.</p>
+            </li> 
+        </ul>
+    </div>
+</div> 
+
+
+<div class="featured-collections">
+    {% for link in linklists.pledges.links %}
+    <div class="collection-thumb">
+      <img class="collection-thumb-img" src="{{ link.object.image | img_url: 'medium' }}">
+      <h3 class="collection-thumb-title">
+        <a href="{{ link.url }}">{{ link.object.title | escape }}</a>
+      </h3>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- Shop --> 
+<div class="row full-width centered-panel pre-order-yes-ill-help">
+    <h1>Yes I'll contribute by pre-ordering.</h1>
+    <p>Count me in! I'll support the your mission to make Senjja available to the world.</p>
+    <a class="button standard-button" href="{{shop.url}}/products/senjja">Pre-Order Now!</a>
+</div>
+
+<!-- Contribute --> 
+{% include "bold-donations-pledge-1" %}
+
+
+<!-- Team --> 
+<div class="row full-width centered-panel-no-padding pre-order-team-heading">
+    <h2>Thank you!</h2>
+    <p>We're not a big drug company. We're just a bunch of folks with a big 
+    dream: to help people just like us, and their partners, be happier and healthier. So on behalf of 
+    everyone who wants amazing sex, or just wants to get back what they lost, <b><i>thank you</i></b>. We sincerely appreciate your 
+    contribution and support.</p> 
+</div>
+<div class="row full-width centered-panel-no-padding personnel-circles">
+    <div class="column large-3 small-0"> </div>
+    <div class="column large-2 small-4">
+        <img src="{{ 'Nigel.jpg' | file_img_url: '150x188'}}"/>
+        <p>Nigel Shaw</p>
+    </div>
+    <div class="column large-2 small-4">
+        <img src="{{ 'Jen.jpg' | file_img_url: '150x188'}}"/>
+        <p>Jennifer Lowrey</p>
+    </div>
+    <div class="column large-2 small-4">
+        <img src="{{ 'Mike.jpg' | file_img_url: '150x188'}}"/>
+        <p>Mike Dunleavy</p> 
+    </div>
+    <div class="column large-3 small-0"> </div>
+</div>
+
+<div class="row full-width centered-panel-no-padding personnel-circles">
+    <div class="column large-3 small-0"> </div>
+    <div class="column large-2 small-4">
+        <img src="{{ 'Tony.jpg' | file_img_url: '150x188'}}"/>
+        <p>Dr. Tony Bella</p>
+    </div>
+    <div class="column large-2 small-4">
+        <img src="{{ 'Frank.jpg' | file_img_url: '150x188'}}"/>
+        <p>Frank Ferrari</p>
+    </div>
+    <div class="column large-2 small-4">
+        <img src="{{ 'Pierre.jpg' | file_img_url: '150x188'}}"/>
+        <p>Pierre Cleroux</p> 
+    </div>
+    <div class="column large-3 small-0"> </div>
+</div> 
+
+<div class="pre-order-bottom-spacer">
+</div>
+

@@ -1,0 +1,18 @@
+{% section 'product' %}
+
+{% if product.metafields.loox.num_reviews %}
+<script id="looxSchemaJson" type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Product",
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "{{ product.metafields.loox.avg_rating }}",
+		"reviewCount": "{{ product.metafields.loox.num_reviews }}"
+	},
+	"name": "{{ product.title }}"
+}
+</script>
+{% endif %}
+
+	<div id="looxReviews" data-product-id="{{product.id}}">{{ product.metafields.loox.reviews }}</div>

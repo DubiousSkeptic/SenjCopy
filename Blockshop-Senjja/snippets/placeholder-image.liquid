@@ -1,0 +1,5 @@
+{% if placeholder-image %}
+  {% include "snippet-transparent" with placeholder-image  %}
+{% endif %}
+
+{{ 'image' | placeholder_svg_tag: 'placeholder-icon' }}

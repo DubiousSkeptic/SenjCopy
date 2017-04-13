@@ -1,0 +1,87 @@
+{% if section.settings.home-product-slider-collection == blank or collections[section.settings.home-product-slider-collection].handle != section.settings.home-product-slider-collection %}
+  {% for c in collections %}
+    {% if c.products-count > 0 %}
+      {% assign collection = c %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% assign collection = collections[section.settings.home-product-slider-collection] %}
+{% endif %}
+
+{%- assign slider_limit = section.settings.home-product-slider-limit -%}
+
+<div class="product-slider{% if collection.products.size < 4 and collection.products.size != 0 %} disabled{% endif %} {{ settings.color-icons-theme }} length--{{ collection.products.size }}">
+  <div class="row header">
+    <div class="columns">
+     <h2 class="font-headings clearfix">
+      {% if collection.products.size %}
+        {{ collection.title | link_to: collection.url }}
+      {% else %}
+        {{ 'homepage.onboarding.product_slider.placeholder.title' | t }}
+      {% endif %}
+     </h2>
+   </div>
+  </div>
+  <div class="row content">
+    <div class="product-grid clearfix">
+      {% if collection.products.size and collection.products.size > 0 %}
+        {% for product in collection.products limit: slider_limit %}
+          {% include 'snippet-product-item' with 'product-slider' %}
+        {% endfor %}
+      {% else %}
+        {% for i in (1..6) %}
+          {% include 'snippet-product-item', type: 'product-placeholder', index: i %}
+        {% endfor %}
+      {% endif %}
+    </div> <!-- .product-grid.clearfix -->
+  </div> <!-- .row.content -->
+</div><!-- #product-slider -->
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "class": "section--featured-collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "home-product-slider-collection",
+      "label": "Choose collection"
+    },
+    {
+      "type": "select",
+      "id": "home-product-slider-limit",
+      "label": "Maximum products",
+      "options": [
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        },
+        {
+          "value": "12",
+          "label": "12"
+        },
+        {
+          "value": "16",
+          "label": "16"
+        },
+        {
+          "value": "20",
+          "label": "20"
+        }
+      ],
+      "default": "12",
+      "info": "Each slide contains up to 4 products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

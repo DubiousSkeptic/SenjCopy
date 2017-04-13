@@ -1,0 +1,100 @@
+{% if snippet-product-item == '2' %}
+  {% assign column-classes = 'columns large-6' %}
+  {% cycle 'slider-open': '<div class="clearfix"></div>', '' %}
+
+{% elsif snippet-product-item == '3' %}
+  {% assign column-classes = 'columns large-6' %}
+  {% cycle 'slider-open': '<div class="clearfix"></div>', '', '' %}
+
+{% elsif snippet-product-item == '' or snippet-product-item == '4' %}
+  {% assign snippet-product-item = '4' %}
+  {% assign column-classes = 'columns large-3' %}
+  {% cycle 'slider-open': '<div class="clearfix"></div>', '', '', '' %}
+
+{% elsif snippet-product-item == '6' %}
+  {% assign column-classes = 'columns large-2' %}
+  {% cycle 'slider-open': '<div class="clearfix"></div>', '', '', '', '', '' %}
+{% endif %}
+
+{% assign product_slider = false %}
+{% if snippet-product-item == 'product-slider' or type == 'product-placeholder' %}
+  {% assign product_slider = true %}
+{% endif %}
+
+{% comment %}{% unless product.available %} sold-out{% endunless %}{% endcomment %}
+
+{% assign has_hover = false %}
+{% if settings.hover-image-enabled and product.images.size > 1 %}
+  {% assign has_hover = true %}
+{% endif %}
+
+  <div class="product-item {{ column-classes }} {% if has_hover %}has-hover{% endif %}">
+    <div class="image-wrapper">
+      {% if product.available == false %}
+        <div class="circle sold-out"><span>{{ 'collections.sold_out_html' | t }}</span></div>
+      {% elsif product.compare_at_price > product.price %}
+        <a class="circle sale" href="{{ product.url | within: collection }}"><span>{{ 'collections.sale' | t }}</span></a>
+      {% endif %}
+      <a class="image-link" href="{{ product.url | within: collection }}">
+        {% if has_hover %}
+          <img src="{{ product.images[1] | product_img_url: 'large' }}" alt="{{ product.images[1].alt | escape }}" class="hover-image" />
+        {% endif %}
+
+        {% if type == 'product-placeholder' %}
+          {% include 'placeholder-product' with index %}
+        {% else %}
+          <img {% if product_slider %}class="lazyOwl" data-src="{{ product.featured_image.src | product_img_url: 'large' }}"{% endif %} src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" />
+        {% endif %}
+      </a>
+    </div><!-- .coll-image-wrap -->
+
+    <div class="caption">
+      <p class="title">
+       {% if type == 'product-placeholder' %}
+          {{ 'homepage.onboarding.product_slider.placeholder.name' | t }}
+       {% else %}
+          <a href="{{ product.url | within: collection }}">
+            {{ product.title }}
+          </a>
+       {% endif %}
+      </p>
+
+
+      {% if settings.brand-show %}
+        {% if type == 'product-placeholder' %}
+          <p class="vendor">
+            {{ 'homepage.onboarding.product_slider.placeholder.vendor' | t }}
+          </p>
+        {% endif %}
+
+        {% assign product_vendor_handle = product.vendor | handle %}
+        {% if collections[product_vendor_handle].handle == product_vendor_handle %}
+          {% assign vendor_url = collections[product_vendor_handle].url %}
+        {% else %}
+          {% assign vendor_url = product.vendor | url_for_vendor %}
+        {% endif %}
+        <p class="vendor">
+          {{ product.vendor | link_to: vendor_url }}
+        </p>
+      {% endif %}
+
+      {% if type == 'product-placeholder' %}
+        <p class="price">
+          {{ 'homepage.onboarding.product_slider.placeholder.price' | t }}
+        </p>
+      {% else %}
+        {% if product.compare_at_price > product.price %}
+          <p class="price">
+            <span class="money">{{ product.price | money }}</span>
+            <em class="marked-down-from">{{ 'collections.was' | t }} <span class="money">{{ product.compare_at_price | money }}</span></em>
+          </p>
+          {% else %}
+          <p class="price">
+            {% if product.price_varies %}{{ 'collections.from' | t }}{% endif %} <span class="money">{{ product.price | money }}</span>
+          </p>
+        {% endif %}
+      {% endif %}
+    </div><!-- .coll-prod-caption -->
+  </div>
+
+

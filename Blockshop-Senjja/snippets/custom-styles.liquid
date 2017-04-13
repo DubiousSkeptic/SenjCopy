@@ -1,0 +1,2763 @@
+<style>
+
+/* Crete Round */ 
+/* ltc-bodoni-175 */ 
+
+/* Blue */
+:root {
+  --color1: #31a0cb;  
+}
+
+/* Off white */ 
+:root {
+  --color2: #f7f7f7;
+}
+
+/* Light grey */ 
+:root {
+  --color3: #cbcac8;
+}
+
+/* Mid grey */ 
+:root {
+  --color4: #878787;
+}
+
+/* Dark grey */ 
+:root {
+  --color5: #373533;
+}
+
+/* Orange */ 
+:root {
+    --color6: #f5861f;
+}
+
+/* Navy */ 
+:root {
+  /* --color7: #122f53; */
+     --color7: #31a0cb; 
+}
+
+/* Red */ 
+:root {
+  --color8: #d02a31;
+}
+
+/* Brick */ 
+:root {
+  --color9: #973b39;
+}
+
+/* Dark orange */ 
+:root {
+  --color10: #db6d26;
+}
+
+/* Light grey */
+:root {
+    --color11: #f7f7f7;
+}
+
+/* Medium dark grey. */ 
+:root {
+    --color12: #333;
+}
+
+/* White */ 
+:root {
+    --color13: #fff;
+}
+
+/* Medium darkish grey */ 
+:root {
+    --color14: #555;
+}
+
+/* Light grey but not super light */ 
+:root {
+    --color15: #ddd;
+}
+
+@mixin responsive-bg-image($image-width, $image-height) {
+  background-size: 100%;
+  height: $image-height;
+  padding-bottom: percentage($image-height / $image-width);
+  display: block;
+}
+
+hr{
+    border-color: var( --color2 );
+}
+
+p, label, li, div.da_div{
+    font-family: "proxima-nova";
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 3px;
+    margin-top: 2pt;
+    font-weight: normal;
+    color: var( --color12 );
+    letter-spacing: 0px;
+
+}
+
+label{
+    font-family: "proxima-nova";
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var( --color12 );
+    letter-spacing: 1px;
+}
+
+
+body{
+    font-family: "proxima-nova";
+    font-size: 14px;
+    margin-top: 0pt; 
+    margin-bottom: 0pt;
+    color: var( --color12 );
+}
+
+h1{
+    font-family: "proxima-nova";
+    font-weight: 100;
+    margin-top: 20px;
+    font-size: 39px;
+    line-height: 47px;
+    margin-bottom: 8px;
+    letter-spacing: 0px
+    color: var( --color12 );
+}
+
+h2{
+    font-family: "proxima-nova";
+    font-weight: 100;
+    margin-top: 15px;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    letter-spacing: 0px
+    color: var( --color12 );
+}
+
+
+
+a, a:active, a:visited{
+    font-size: 15px;
+    color: var( --color6 );
+    text-decoration: none!important; 
+}
+
+a:link{
+    color: var( --color6 );
+}
+
+a:hover{
+    color: var( --color10);
+}
+
+.template-password .login .login-form {
+      visibility: visible;
+    
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 30px;
+      position: fixed;
+      margin-left: -70px;
+      margin-top: -50px;
+      left: 50%;
+      top: 50%;
+      width: 200px; }
+
+div.login-link{
+      position: fixed;
+      margin: 0px;
+      margin-left: -70px;
+      margin-top: -15px;
+      left: 50%;
+      top: 50%;
+      width: 200px; }
+}
+
+@media only screen and (max-width: 767px){
+    div#login, div#register div#customer-addresses, div#customer-order{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Donation Widget */ 
+
+.donation-thank-you-header{
+    background-color: var( --color13 );
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.donation-thank-you-header h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.donation-thank-you-header p{
+    font-size: 20px;
+    line-height: 28px; 
+}
+
+
+div.da_div, div.da_description{
+    background-color: var( --color13 );
+    border: none; 
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+div.da_title{
+    font-family: "proxima-nova";
+    font-weight: 100;
+    margin-top: 15px;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    letter-spacing: 0px
+    color: var( --color12 );
+    text-align: center;
+}
+
+/* Donation Button */ 
+#customButton{
+    display:block;
+    margin: 0 auto!important; /* center */ 
+    background-color: var(--color6);
+    text-transform: none;
+    font-weight: normal;
+    font-size: 14px; 
+    color: var( --color12 ); 
+    text-align: center;
+    height: 45px!important;
+    width: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    cursor: pointer; 
+    border-radius: 2px;
+}
+
+#customButton:hover{
+    background-color: var( --color10 ); 
+}
+
+
+/* Content Panels  ============================================  */
+
+.content-panel{
+    padding-bottom: 80px;
+    padding-top: 60px
+}
+
+.image-caption-panel{
+    padding-top: 60px;
+}
+
+
+.content-panel h2{
+    margin-bottom: 2px;
+}
+
+.one-panel-content{
+    padding-left: 57px;
+    padding-right: 57px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.left-panel, .right-panel-pull{
+    padding-left: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.right-panel, .left-panel-push{ 
+    padding-right: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+
+.two-panel-content h1{
+    padding-top: 60px;
+    max-width: 350px;
+}
+
+.two-panel-content-image-caption{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.two-panel-content p{
+    max-width: 350px;
+}
+
+.two-panel-content-image img{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.centered-panel-no-padding{
+    text-align: center;
+}
+
+.centered-panel-normal-padding{
+    text-align: center;
+    padding-top: 60px;
+    padding-left; 50px;
+    padding-right: 50px;
+}
+
+.centered-title-panel{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.centered-panel{
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 150px; 
+    padding-right: 150px; 
+}
+
+@media only screen and (max-width: 767px){
+        .centered-panel{
+        padding-left: 50px; 
+        padding-right: 50px; 
+    }
+    
+    .left-panel, .left-panel-push{
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 0px; 
+    }
+
+    .right-panel, .right-panel-pull{ 
+        padding-top: 0px; 
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .one-panel-content
+    {
+        padding-left: 37px;
+        padding-right: 37px;
+        
+    }
+    
+    .two-panel-content p{
+        max-width: 100%;
+    }
+    
+    .two-panel-content-image img{
+        padding-left: 20px;
+        padding-right:20px;
+        padding-top: 35px;
+        padding-bottom: 20px;
+    }
+    
+    .two-panel-content-image-caption{
+        padding-top: 10px;
+    }
+    
+    .two-panel-content-image-caption h1{
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px; 
+    }
+    
+    .two-panel-content-image-caption p{
+        padding-left: 20px;
+        padding-right: 20px; 
+    }
+}
+
+.our-story-banner{
+    color: var( --color12 );
+}
+
+.what-senjja-means p{
+    font-family: "Crete Round";
+    text-align: left;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+p.signature{
+    font-size; 7px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+.about-us-panel-2{
+    background-color: var(--color2);
+}
+
+.about-us-in-the-beginning{
+    padding-top: 30px; 
+    padding-bottom: 30px;
+    background-color: var( --color11 ); 
+}
+
+
+/* Orders table */
+.odd, .even, .note, .status_paid, .status_fulfilled, .money{ 
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.order_number, .date, .payment_status, .fulfillment_status, .total{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Order Details */
+#order_details > thead > tr > th{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+div#customer-order{
+    padding-bottom: 50px;
+}
+
+.account-content h2{
+    margin-top: 10px;
+}
+
+.label{
+    font-size: 14px;
+    font-weight: normal;
+    color: var( --color12 ); 
+}   
+
+/* Help, Account, Cart Buttons */ 
+.main-header .search-account a, .main-header .search-account a:link, .main-header .search-account a.cart-link
+{
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: var( --color4 ); 
+}
+
+/* Cart and Account icons */ 
+.fw--icon--account, .fw--icon--cart{
+     color: var( --color4 )!important;
+}
+
+.fw--icon--cart{
+    font-size: 18px;
+}
+
+/* No change on hover */ 
+.fw--icon--account:hover, .fw--icon--cart:hover{
+     color: var( --color4 )!important; 
+}
+
+
+.main-header:hover .search-account a:hover, .main-header:hover, a.cart-link:hover 
+{
+    color: var(--color5 ); 
+}
+
+.account-content h2{
+    text-transform: none;
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.account-content a, .account-content a:link{
+    font-size: 15px;
+}
+
+.note p, #address_tables p{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.address_title{
+    text-transform: none;
+    font-size: 22px;
+    margin-bottom: 2px;
+    font-weight: 300;
+}
+
+
+
+/* Fields on address edit form */
+#address_province_5226900877, #address_country_5226900877, #address_form_5226900877 > table > tbody > tr:nth-child(11) > td.value{
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: var( --color12 );
+}
+
+h1.page-title{
+    margin-top: 40px;
+    color: var( --color12 );
+}
+
+#shopify-section-product > div.section-product-template > article > div.positions.show-for-medium-only.active > div:nth-child(1) > div:nth-child(1) > h1, 
+#shopify-section-product > div.section-product-template > article > div.positions.show-for-medium-only.active > div:nth-child(1) > div:nth-child(2) > div > div > p > span.actual-price.money, 
+#shopify-section-product > div.section-product-template > article > div.positions.show-for-medium-only.active > div:nth-child(1) > div:nth-child(4) > div > div > ul
+{
+    color: var( -- color1 );
+}
+
+
+#shopify-section-product > div.section-product-template{
+    background-color: var( --color13 );
+}
+
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea{
+    font-size: 14px;
+    line-height: 18pt;
+    margin-bottom: 5pt;
+    margin-top: 2pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+    
+}
+
+input[type="number"] {
+    height: 45px;
+    font-size: 13px;
+    padding: 0 8px;
+    font-weight: normal; 
+}
+
+
+input[type="number"]::-webkit-inner-spin-button { 
+    display: none;
+}    
+
+
+div.action_bottom{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.blog-header{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: #e7e7e7;
+    text-transform: uppercase;
+    color: #273644;
+}
+
+.blog-shop-senjja-link{
+    font-size: 8pt; 
+    font-weight: bold; 
+    background-color: var( --color6 ); 
+}
+
+a.blog-shop-senjja-link:hover{
+    background-color: var( --color10 );
+
+}
+
+.blog-title{
+    padding-bottom: 18px;
+    text-align: center; 
+    background-color: #e7e7e7;
+    text-transform: uppercase;
+    color: #273644;
+}
+
+.blog-title h1{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.blog-title h2{
+    margin-top: -10px;
+    font-size: 1em;
+    font-weight: bold;
+}  
+
+.template-blog .article{
+    border-top: none; 
+}
+
+.divider{
+    border-top: none;
+}
+
+    
+
+/* Fix required remove top padding of 30 px 
+   after shrinking the top header by compressing 
+   the menu spacing somewhat. */ 
+.main-content{
+    padding-top: 0px;
+}
+
+/* Bottom border on header except for home page */
+{% if template <> "index" %}
+    .main-header{
+        border-bottom: solid 1px #dfdfdf;
+    }
+{% endif %} 
+
+
+/* Cancel uppercase for product collection headings */
+.template-index .product-slider h2{
+    text-transform: none;
+}
+
+.template-product .social-share .title{
+    text-transform: none; 
+}
+
+p.product-bullets-header{
+    font-size: 9pt; 
+    color: var( --color12 );
+    margin-bottom: 7px;
+    font-weight: bold;
+
+}
+
+/* Ask your Doctor */
+.ask-your-doctor-header{
+    
+}
+
+
+/* Product description */
+.product-description-bullets{
+    color: var( --color12 );
+    margin-left: -20px;
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.product-description-bullets li{
+    margin-bottom: 0px;
+    font-size: 13px;
+    line-height: 18px;
+    width: 222px;
+    text-align: justify;
+}
+
+.product-description{
+    font-size: 12pt; 
+    color: var( --color12 );
+}
+
+.prices{
+    padding-bottom: 20px;
+    font-size: 16px;
+}
+
+.template-product article .prices .actual-price{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Product  */
+
+.pre-order-find-out-more{
+    margin-top: -8px;
+    margin-bottom: 12px;
+}
+
+.pre-order-find-out-more a{
+    font-size: 13px;
+}
+
+.template-product .thumbs {
+  display: inline-block;
+  text-align: center;
+  width: 120px; 
+  padding-top: 50px;
+  padding-right: 50px
+  }
+  
+
+.template-product .thumbs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.template-product .thumbs .thumb {
+    padding: 6px;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 3px;
+    text-align: left;
+    max-width: 32%;
+    width: 60px;
+}
+    
+.template-product .thumbs .thumb img {
+  outline: 1px solid #bfbfbf; 
+ }
+  
+.template-product .thumbs .thumb.active img {
+    outline: 1px solid #31a0cb; 
+}
+  
+@media only screen and (min-width: 768px) {
+    .template-product .thumbs .thumb {
+        max-width: none; 
+    } 
+}
+
+
+.template-product .thumbs{
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-right: 0px;
+}
+
+.template-product .thumbs .thumb{
+    width: 40px;
+}
+
+    .lt-ie9 .template-product .thumbs .thumb {
+      max-width: none; 
+}
+
+    .template-product .thumbs img {
+        width: 90px; 
+}
+    
+@media only screen and (min-width: 768px) {
+      .template-product .thumbs img {
+        width: auto; 
+    } 
+}
+
+.lt-ie9 .template-product .thumbs img {
+    width: auto; 
+}
+
+.template-product .thumbs .previous-next {
+    margin: 20px 10px 20px 0;
+    text-align: right;
+    text-transform: uppercase; 
+}
+
+.template-product .photos {
+  text-align: center;
+  padding-left: 0;
+  min-height: 1px;
+  margin-bottom: 20px; 
+ }
+
+@media only screen and (min-width: 768px) {
+        .template-product .photos .container {
+          cursor: pointer; 
+         
+      } 
+}
+  
+
+
+.template-product .photos{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.product-description-div{
+    margin-top: 30px;
+}
+
+/* Darken background-color of social share for product */
+.template-product .social-share{
+    background-color: var(--color5);
+}
+
+/* Reduce padding at bottom of product */
+.template-product article{
+    padding-bottom: 30px;
+}
+
+/* Ditto for product titles */
+.template-product article .page-title{
+    font-family: "Crete Round";
+    color: var(--color1);
+    text-transform: none;
+    font-size: 42px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var( --color1 );
+}
+
+/* Variant listbox */
+.single-option-selector{
+    height: 45px;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: uppercase;
+    width: 300px!important;
+
+}
+
+.selector-wrapper label{
+     text-transform:uppercase!important;
+
+}
+
+div.selector-wrapper{
+    width: 300px;
+}
+
+
+
+/* Increase padding left/right for small screens for product details */
+@media only screen and (max-width: 767px){
+    .show-for-small {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Reduce top and bottom padding in product slider */
+@media only screen and (min-width: 768px){
+    .template-index .product-slider {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+}
+
+.product-page-video-row{
+    padding-top: 60px;
+}
+
+
+/* Product Reviews */
+.product-reviews-header{
+    padding-top: 60px;
+    border-top: 1px solid #ddd;
+}
+
+/* Weird Loox reivews code section that won't go away */ 
+div#looxReviews{
+    height: 0px;
+}
+
+
+
+
+/* Title */ 
+
+p.title{
+    font-weight: bold
+}
+
+/* Promo images on the main page */ 
+.small-promos{
+    margin: 10px;
+}
+
+.image-text-widget{
+    padding: 10px;
+}
+    
+
+/* Footer */ 
+.main-footer
+{
+    margin-top: 0px;
+    background-color: var(--color7);
+}
+
+.main-footer .title{
+    font-size: 19px; 
+}
+
+.main-footer, .main-footer p, .main-footer li{
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.footer-logo img{
+    margin-top: 30px;
+}
+
+.main-footer, .main-footer p{
+    line-height: 17px;
+}
+
+.main-footer p{
+    color: var( --color15 )!important;
+}
+
+.main-footer .menu .footer-nav li a{
+    font-size: 13px;
+    line-height: 16pt;
+    margin-bottom: 5px;
+    margin-top: 2pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: var( --color15 ); 
+}
+
+.main-footer .menu .footer-nav li a:visited{
+    color: var( --color15 ); 
+}
+
+
+.main-footer .menu .footer-nav li a:hover{
+    color: var( --color13);
+}
+
+/* Social Icons */ 
+.fw--icon, .fw--icon:visited, .fw--icon:active{
+    color: var( --color3 )
+}
+
+.fw--icon:hover{
+    color: var( --color13 ); 
+}
+
+div.large-4.columns.about p, #mailing-list-module > p{
+    color: var( --color13 );
+}
+
+@media only screen and (max-width: 767px){
+    .footer-logo{
+        margin-top: 30px;
+        text-align: center;
+    }
+}
+
+.textarea{
+    font-size: .9em;
+}
+
+@media only screen and (min-width: 768px){
+    .main-header .bottom-row .menu-container{
+        width: auto;
+        padding: 0px;
+        padding-left: 15px;
+    }
+    
+    .mobile-menu-row{
+        visibility: collapse;
+    }
+    
+    header .logo-image{
+        padding-left: 15px;
+    }
+}
+
+.main-header .top.row{
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 12px;
+}
+
+.main-header .bottom-row{
+    padding-bottom: 5px;
+}
+
+.main-header .bottom-row .menu-container{
+    padding-top: 20px; 
+}
+
+div.search-account.columns.large-2{
+    padding-top: 15px;
+}
+
+.main-header .mobile-menu .nav-item a{
+    padding: 6px;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+.main-header .mobile-tools{
+    padding: 0px;
+    padding-left: 20px;
+}
+
+    
+
+div.mobile-menu{
+    margin-bottom: 18px;
+}
+
+.health-canada-license{
+    padding: 30px;
+}
+
+.health-canada-license img{
+    box-shadow: 3px 3px 5px grey;
+}
+
+.health-canada
+{
+    background-color: var( --color13 );
+    border-bottom: 1px solid #676767;
+    border-top: 1px solid #cccccc;
+    text-align: center;
+    height: 120px;
+}
+
+.health-canada-logo-wrapper{
+    padding-top: 20px;
+}
+
+.health-canada-logo{
+    padding-top: 10px;
+    padding-right: 10px;
+    float:left;
+}
+
+.health-canada-logo img{
+    padding-top: 3px;
+    border: 0px solid var( --color13 ); 
+}
+
+.health-canada-logo-description{
+    float:left; 
+    padding-top: 10px;
+}
+
+a.health-canada-link, a.health-canada-link:visited{
+    font-size: 13px;
+    color: var(--color15)!important;
+}
+
+a.health-canada-link:hover{
+    color: var( --color13 )!important; 
+}
+
+@media only screen and (max-width: 767px){
+    .health-canada-logo{
+        float:none;
+        margin:0px auto;
+        padding-right: 0px; 
+    }
+    
+    .health-canada-logo-description{
+        float:none; 
+        margin:0px auto;
+    
+    }
+}
+
+.health-canada img{
+    width: 250px;
+    padding-top: 40px;
+}
+
+.health-canada-caption{
+    text-align: center;
+    padding-top: 38px;
+}
+
+#shopify-section-footer > footer > a > div > div.column.large-8.health-canada-caption > p{
+    font-size: 12x;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 3px;
+    padding-left: 40px;
+    padding-right: 40px;
+    color: var( --color12 );
+}
+
+
+
+
+@media only screen and (max-width: 767px){
+    .health-canada-caption p{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+    .template-index .slider .slide .caption .title {
+        font-size: 2.5em;
+        color: var( --color12 ); 
+        
+    }
+    
+    .template-index .slider .slide .caption .sub-title {
+        font-size: 1.5em;
+        color: var( --color12 ); 
+    }
+    
+}
+
+/*  Social Feeds area on home page */
+.template-index .widgets .row{
+    padding-top: 50px;
+}
+
+
+
+.main-header .main-menu .widescreen > ul > li > a{
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: -0px;
+    color: var( --color4)
+}
+
+
+
+.main-header .main-menu .widescreen > ul > li > a:hover{
+    color: var(--color5);
+}
+
+
+.main-header .main-menu .widescreen .sub-nav.catalog li {
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+.warnings ul{
+    margin-left: -20px;
+    margin-bottom: 0px; 
+    letter-spacing: 0px;
+   
+}
+
+.warnings ul li{
+    color: var(--color14 )!important; 
+}
+
+@media only screen and (max-width: 767px){
+    .warnings ul{
+    margin-left: 20px;
+    margin-right: 20px;
+    }
+}
+
+.warnings{
+    padding-bottom: 50px;
+    background-color: var( --color13 );
+    color: #666666;
+}
+
+.warnings-title{
+    background-color: var( --color13 );
+    padding-top: 30px;
+}
+
+.warnings-title p{
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: var( --color14 )!important;
+}
+
+.product-grid .caption{
+    text-transform: none;
+}
+
+.template-index .widgets .title{
+    text-transform: none;
+}
+
+@media only screen and (max-width: 767px){
+    .warnings-title p{
+        margin-left: 20px; 
+    }
+}
+
+/* Home Page Banner, Our Story Banner */
+
+
+.home-page-banner-caption{
+    margin-top: 200px;
+    background-color: rgba(233, 243, 250, 0.6);
+    color: var( --color12 );
+}
+
+.home-page-banner-caption h1{
+    font-family: "Crete Round";
+    color: var(--color1);
+    font-size: 40px;
+    line-height: 31pt;
+}
+
+.home-page-banner-caption p{
+
+}
+
+.home-page-banner{
+    background-image: url( {{ 'BannerImage3.jpg' | file_img_url: '1400x900'}} );
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+}
+
+.home-page-customer-reviews-1, .home-page-customer-reviews-2 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.home-page-reviews-panel{
+    padding: 0px;
+}
+
+.home-page-customer-reviews-1{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.home-page-customer-reviews-2 {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.home-page-customer-reviews-read-all{
+    font-size: 13px;
+    font-style: italic;
+    padding-top: 0px;
+}
+
+
+/* Product review */ 
+.spr-review-header-title{
+    font-family: "proxima-nova";
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 3px;
+    margin-top: 2pt;
+    font-weight: bold;
+    color: var( --color12 );
+    letter-spacing: 0px;
+}
+
+.spr-icon{
+    font-size: 14px!important;
+}
+
+
+@media only screen and (max-width: 900px){
+    .home-page-banner-caption{
+        margin-top: 80px;
+    }
+}
+
+
+@media only screen and (max-width: 767px){
+    .home-page-banner{
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+    
+    .home-page-banner-caption{
+        margin-top: 460px;
+        background-color: rgba(233, 243, 250, 1.0);
+        margin-left: 50px;
+        margin-bottom: 80px;
+        padding-right: 40px;
+    }
+    
+    .home-page-banner-caption h1{
+    }
+    
+    .home-page-banner-caption h2{
+        letter-spacing: -0.5px;
+        margin-top: 0px;
+        
+    }
+}
+
+
+
+@media only screen and (min-width: 900px){
+    .home-page-banner{
+    height: 800px;
+    }
+    
+}
+
+@media only screen and (min-width: 1500px){
+    .home-page-banner{
+    height: 1000px;
+    }
+}
+
+@media only screen and (min-width: 1900px){
+    .home-page-banner{
+    height: 1200px;
+    }
+}
+
+/* Home page social proof */
+.content-panel-social-proof
+{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+    background-color: var( --color13 ); 
+
+}
+
+.content-panel-social-proof h1{
+    font-family: "Crete Round";
+    font-style: italic;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.content-panel-social-proof h1 {
+    color: var( --color12 );
+}
+
+.content-panel-social-proof h1:hover{
+    color: var(--color4);
+}
+
+.content-panel-social-proof p{
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* Home page what is Senjja */ 
+.home-page-what-is-senjja{
+    padding-bottom: 0px; 
+}
+
+/* Home page Senjja image */ 
+.home-page-senjja-image{
+    background-image: url( {{ 'Senjja-001.jpg' | file_img_url: '2000x909'}} );
+    width: 100%;
+    height: 454px;
+    background-size: cover;
+    border-bottom: 40px solid var( --color13 ); 
+}
+
+
+@media only screen and (min-width: 900px){
+    .home-page-senjja-image{
+        background-image: url( {{ 'Senjja-001-1.jpg' | file_img_url: '2000x814'}} );
+    }
+}
+
+@media only screen and (min-width: 1180px){
+    .home-page-senjja-image{
+        background-image: url( {{ 'Senjja-001-2.jpg' | file_img_url: '2000x751'}} );
+    }
+}
+
+@media only screen and (min-width: 1300px){
+    .home-page-senjja-image{
+        background-image: url( {{ 'Senjja-001-3.jpg' | file_img_url: '2000x654'}} );
+    }
+}
+
+@media only screen and (min-width: 1530px){
+    .home-page-senjja-image{
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1930px){
+    .home-page-senjja-image{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .home-page-senjja-image{
+        background-image: url( {{ 'Senjja-001-7.jpg' | file_img_url: '1000x1264'}} );
+        height: 700px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .home-page-senjja-image{
+        background-image: url( {{ 'Senjja-001-6.jpg' | file_img_url: '861x1264'}} );
+        height: 600px;
+    }
+}
+
+
+
+/*
+
+@media only screen and (max-width: 500px){
+    .home-page-senjja-image{
+        background-image: url( {{ 'Senjja-001-Small.jpg' | file_img_url: '400x440'}} );
+        height: 450px;
+    }
+}
+
+@media only screen and (max-width: 296px){
+    .home-page-senjja-image{
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .home-page-senjja-image{
+        height: 400px;
+    }
+}
+*/
+
+
+
+
+
+
+/* Medical Page Banner */
+
+.medical-page-banner{
+    background-image: url( {{ 'TonyBella.jpg' | file_img_url: '1400x900'}} );
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+}
+
+
+.medical-page-banner-caption{
+    margin-top: 110px;
+    color: var(--color6);
+    background-color: rgba(233, 243, 250, 0.6);
+}
+
+.medical-page-banner-caption-wrapper, .sideeffects-page-banner-caption-wrapper{
+    padding-bottom: 20px;
+}
+
+.medical-page-banner-caption h1{
+    font-family: "Crete Round";
+    color: var(--color1);
+    font-size: 28pt;
+    line-height: 31pt;
+}
+
+.medical-page-doctor{
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+.medical-bella-resume-title{
+    padding-top: 60px;
+}
+
+.medical-bella-resume-1, .medical-bella-resume-2{
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
+}
+
+.medical-clinical-trial-header{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.medical-clinical-trial-header h1{
+    font-size: 28px!important;
+}
+
+
+@media only screen and (min-width: 1350px){
+    .medical-page-banner{
+        height: 900px
+    }
+    
+    
+}
+
+@media only screen and (min-width: 768px){
+    .medical-clinical-trial-left-column{
+        padding-left: 40px;
+    }
+    
+    .medical-clinical-trial-right-column{
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .medical-page-banner{
+        padding-top: 0px;
+        padding-left: 50px;
+        padding-right: 0px;
+    }
+    
+    .medical-page-banner-caption{
+        background-color: rgba(233, 243, 250, 1.0);
+        margin-top: 450px;
+        color: var( --color12 );
+    }
+    
+    .medical-page-banner-caption h2{
+        font-size: 15px;
+        line-height: 15px;
+    }
+    
+    .medical-clinical-trial-header, .medical-clinical-trial{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .medical-bella-resume-1{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    
+    .medical-bella-resume-2{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
+
+/* Save Money Page */
+.price-comparison-row{
+    background-color: var(--color2); 
+    padding-bottom: 50px;
+}
+
+.price-comparison-title{
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+
+.price-comparison{
+    background-color: var( --color13 );
+    border: 10px solid var(--color2 ); 
+    height: 350px;
+    padding: 30px;
+    text-align: center;
+}
+
+.price-comparison h1{
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 26px;
+}
+
+.price-comparison h2{
+    font-size: 25px;
+    color: var( --color12 );
+    font-weight: bold; 
+}
+
+.price-comparison img{
+    width: 120px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+img.senjja-image{
+    width: 150px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+    
+
+@media only screen and (max-width: 767px){
+   
+    .price-comparison-row{
+       padding-left: 20px;
+       padding-right: 20px;
+    }
+    
+    .price-comparison{
+      
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+
+
+/* SideEffects Page */
+
+/* Side Effects */
+.content-sideeffects{
+    padding-top: 0px;
+}
+
+.sideeffects-page-banner{
+    background-image: url( {{ 'Tree.jpg' | file_img_url: '1200x771'}} );
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+}
+
+
+.sideeffects-page-banner-caption{
+    margin-top: 200px;
+    color: var(--color6);
+    background-color: rgba(242, 178, 53, 0.7);
+
+}
+
+.sideeffects-page-banner-caption h1{
+    font-family: "Crete Round";
+    color: var(--color1);
+    font-size: 28pt;
+    line-height: 31pt;
+    color: var(--color5 ); 
+}
+
+.content-sideeffects h2{
+    margin-bottom: 30px;
+}
+
+.content-sideeffects li {
+    margin-left: -15px;
+    font-size: 14px;
+    line-height: 18pt;
+    margin-bottom: 0pt;
+    margin-top: 0pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+
+
+@media only screen and (max-width: 767px){
+    .sideeffects-page-banner{
+        padding-top: 0px;
+        padding-right: 50px;
+    }
+    
+    .sideeffects-page-banner-caption{
+        margin-top: 400px;
+    }
+    
+    .sideeffects-page-banner-caption h1{
+        font-size: 24px;
+        line-height: 26px;
+    }
+    
+    .sideeffects-page-banner-caption h2{
+        font-size: 15px;
+        line-height: 15px;
+    }
+    
+}
+
+/* Save Money Page */
+
+.savemoney-page-banner{
+    background-image: url( {{ 'PriceComparisonBanner.jpg' | file_img_url: '1400x900'}} );
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+}
+
+
+.savemoney-page-banner-caption{
+    margin-top: 200px;
+    color: var(--color6);
+    background-color: rgba(242, 178, 53, 0.0);
+
+}
+
+.savemoney-page-banner-caption h1{
+    font-family: "Crete Round";
+    color: var(--color1);
+    font-size: 28pt;
+    line-height: 31pt;
+}
+
+.content-savemoney h2{
+    margin-bottom: 30px;
+}
+
+.content-savemoney li {
+    margin-left: -15px;
+    font-size: 14px;
+    line-height: 18pt;
+    margin-bottom: 0pt;
+    margin-top: 0pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+
+@media only screen and (max-width: 767px){
+    .savemoney-page-banner{
+        padding-top: 0px;
+        padding-right: 50px;
+    }
+    
+    .savemoney-page-banner-caption{
+        background-color: rgba(242, 178, 53, 0.6);
+        margin-top: 400px;
+        color: var( --color12 );
+    }
+    
+    .savemoney-page-banner-caption h1{
+        font-size: 24px;
+        line-height: 26px;
+    }
+    
+    .savemoney-page-banner-caption h2{
+        font-size: 15px;
+        line-height: 15px;
+    }
+}
+
+/* Home Page How it Works */
+.home-page-how-it-works{
+    background-color: var( --color2 ); 
+    padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 767px){
+    .home-page-how-it-works{
+        font-size: 15px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* Home Page Icons */
+
+.home-page-icon-caption h1 {
+    font-family: 'proxima-nova';
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 0px;
+    line-height: 16pt;
+    padding-top: 15px;
+    letter-spacing: 0px;
+    color: var( --color12 );
+}
+
+.home-page-icon-caption p{
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 0px;
+    margin-right: 20px;
+    color: var( --color12 );
+}
+    
+.home-page-icon{
+    width: 110px;
+    height: auto;
+    float:left;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.home-page-icon-container, .home-page-icon-container-2{
+    padding-left: 80px;
+    background-color: var( --color2 ); 
+}
+
+.home-page-icon-container-2{
+      padding-bottom: 60px;
+}
+
+
+.home-page-icon-container-column{
+    padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 767px){
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 140px;
+        padding-right: 25px;
+        padding-bottom: 0px;
+    }
+    
+    .home-page-icon-container-column{
+        padding-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 60px;
+
+    }
+}
+
+
+
+@media only screen and (max-width: 430px){
+
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 20px;
+        padding-right: 15px;
+        padding-bottom: 0px;
+    }
+
+    .home-page-icon-caption h1{
+        font-size: 15px;
+    }
+
+    .home-page-icon-caption p{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1160px){
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 150px;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 250px;
+    }
+}
+
+@media only screen and (min-width: 2100px){
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 450px;
+    }
+}
+
+@media only screen and (min-width: 2300px){
+    .home-page-icon-container, .home-page-icon-container-2{
+        padding-left: 600px;
+    }
+}
+
+/* Home page Video */
+.home-page-video-row{
+    background-color: var( --color2 ); 
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.home-page-video-subtitle{
+    text-align: left;
+}
+
+
+
+/* Home page feature row */
+
+.home-page-feature-row{
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.home-page-feature-column h2{
+    font-family: "Crete Round";
+    font-style: italic;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    line-height: 19px;
+    padding-top: 15px;
+    color( --color12 ); 
+}
+
+.home-page-feature-column p{
+    font-family: "Crete Round";
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0px;
+    font-weight: normal;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    line-height: 18px;
+    margin-bottom: 35px;
+    color( --color12 ); 
+}
+
+@media only screen and (max-width: 767px){
+   .home-page-feature-column{
+       padding-top: 60px;
+   }
+}
+
+/* Pre-Order Page */ 
+
+.pre-order-page-banner{
+    background-image: url( {{ 'Crowd-Content-Community-1800-Color.jpg' | file_img_url: '1800x1029'}} );
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    padding-right: 400px;
+    padding-left: 400px; 
+}
+
+.pre-order-page-banner-caption{
+    background-color: rgba(255,255,255, 0.9);
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.pre-order-timeline-row{
+    background-color: var(--color2); 
+    padding-top: 50px;
+    padding-bottom: 50px; 
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.pre-order-timeline{
+    border-left: 1px solid var(--color6); 
+}
+
+.pre-order-timeline ul{
+    list-style: none; 
+    max-width: 900px;
+}
+
+.pre-order-timeline img{
+    float: left;
+    margin-top: 3px;
+    margin-left: -68px; 
+}
+
+.timeline-date{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    color: black;
+}
+
+.timeline-title{
+    font-size: 20px;
+    font-weight: 100; 
+    letter-spacing: 1px; 
+    color: black;
+    margin-top 16px;
+}
+
+.timeline-description{
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 20px;
+}
+
+.pre-order-yes-ill-help{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.pre-order-team-heading{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 60px;
+}
+
+.pre-order-page-banner-caption h1{
+    font-family: "Crete Round";
+    color: var(--color1);
+    font-size: 40px;
+}
+
+.personnel-circles{
+    padding-top: 40px;
+    background-color: var( --color13 ); 
+}
+
+@media only screen and (max-width: 768px){
+    .personnel-circles{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .personnel-circles{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .personnel-circles{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.pre-order-bottom-spacer{
+    height: 80px;
+}
+
+ .personnel-circles p{
+     font-size:  12px;
+     margin-top: 8px;
+     font-family: "Crete Round";
+     line-height: 18px;
+ }
+
+
+@media only screen and (min-width: 1024px){
+    .pre-order-page-banner{
+        padding-top: 60px;
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 1500px){
+    .pre-order-page-banner{
+        padding-top: 150px;
+        height: 400px;
+    }
+    
+}
+
+@media only screen and (max-width: 1500px){
+    .pre-order-page-banner{
+        padding-right: 200px;
+        padding-left: 200px; 
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .pre-order-page-banner{
+        padding-right: 150px;
+        padding-left: 150px; 
+        height: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width: 920px){
+    .pre-order-page-banner{
+        padding-right: 80px;
+        padding-left: 80px; 
+        height: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .pre-order-page-banner{
+        padding-right: 50px;
+        padding-left: 50px; 
+        height: 350px; 
+    }
+    
+    .personnel-circles img{
+        width: 80px;
+    }
+}
+
+
+@media only screen and (max-width: 400px){
+    .pre-order-page-banner{
+        padding-right: 20px;
+        padding-left: 20px; 
+        height: 400px;
+    }
+}
+
+.pre-order-content{
+    background-color: var( --color13 ); 
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+/* Pre-Order Donation Widget */ 
+
+div.da_div, div.da_description{
+    background-color: var( --color13 );
+    border: none; 
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+div.da_title{
+    font-family: "proxima-nova";
+    font-weight: 100;
+    margin-top: 15px;
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    letter-spacing: 0px
+    color: var( --color12 );
+    text-align: center;
+}
+
+/* Donation Button */ 
+#customButton{
+    display:block;
+    margin: 0 auto!important; /* center */ 
+    background-color: var(--color6);
+    text-transform: none;
+    font-weight: normal;
+    font-size: 14px; 
+    color: var( --color13 ); 
+    text-align: center;
+    height: 45px!important;
+    width: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 12px;
+    cursor: pointer; 
+    border-radius: 2px;
+}
+
+#customButton:hover{
+    background-color: var( --color10 ); 
+}
+
+/* Stylize radio buttons: http://code.stephenmorley.org/html-and-css/styling-checkboxes-and-radio-buttons */ 
+
+input.payment_option{
+    margin-top: 6px;
+}
+
+input.payment_option span{
+    max-width: 200px;
+}
+
+
+/* About Us / Our Story */
+.about-us-content{
+    padding-left: 20px;
+}
+
+.about-us-image{
+    padding-right: 20px;
+}
+
+.about-us-image p{
+    font-size: 0.9em; 
+    font-style: italic; 
+    padding-top: 5px; 
+}
+
+.our-story-banner{
+    background-image: url( {{ 'VitruvianBW.jpg' | file_img_url: '878x504'}} );
+    width: 100%;
+    height: 900px;
+    background-size: cover;
+}
+
+.our-story-banner-caption{
+    background-color: rgba(30, 30, 30, 0.5);
+    padding-right: 50px;
+    padding-left: 35px; 
+    padding-bottom: 25px;
+}
+
+.our-story-banner-caption h1{
+    font-family: "Crete Round";
+    color: white; 
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.our-story-banner-caption p{
+    color: white;
+}
+
+/* Inset text
+.leonardo-da-vinci{
+    font-size: 29px;
+    float: left;
+    line-height: 30px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    padding-top: 5px;
+}
+*/
+
+.leonardo-da-vinci{
+    font-size: 29px;
+    line-height: 30px;
+}
+
+.our-story-personnel{
+    padding-top: 60px;
+    padding-bottom: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+
+
+.our-story-personnel-spacer{
+    height: 60px;
+}
+
+.save-money-caption h1{
+    font-family: "Crete Round";
+    color: var(--color1); 
+}
+
+@media only screen and (max-width: 1366px){
+    .our-story-banner{
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    .our-story-banner{
+        height: 600px;
+    }
+}
+
+
+@media only screen and (max-width: 767px){
+    .our-story-banner{
+        height: 400px;
+    }
+    
+    .exacting-standards-caption h1{
+        margin-top: 0px;
+    }
+}
+
+
+@media only screen and (max-width: 420px){
+    .our-story-banner-caption{
+        padding-right: 20px;
+        padding-left: 20px; 
+        padding-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+/* Product ==================================================== */
+
+.product-quantity-label{
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var( --color12 ) 
+}
+
+.product-option-name{
+     font-weight: bold;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 767px){
+   .our-inventors-caption h1{
+        margin-top: 20px;
+    }
+    .our-inventors-caption{
+        padding-left: 35px; 
+        padding-right: 35px;
+    }
+    
+}
+
+
+.ask-your-doctor{
+    padding: 50px;
+}
+
+.ask-your-doctor-letter img{
+    box-shadow: 3px 3px 5px grey;
+}
+
+.ask-your-doctor-caption{
+    padding-left: 30px;
+}
+
+
+.what-to-expect{
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.half-divider{
+    height: 1px;
+    background-color: #ddd;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.why-senjja{
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+
+
+
+.content-panel-shop-now, .content-panel-shop-now-2, .content-panel-shop-now-3, .content-panel-shop-now-4{ 
+    background-color: var(--color2);
+    text-align: center;
+    padding-top: 80px;
+    font-size: 15px;
+    padding-bottom: 80px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.content-panel-shop-now-2{ 
+    background-color: var( --color13 );
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.content-panel-shop-now-3{
+    background-color: var(--color11);
+}
+
+.content-panel-shop-now-4{
+    background-color: var( --color13 );
+}
+
+.content-panel-shop-now h1, .content-panel-shop-now-2, .content-panel-shop-now-3 h1{
+    margin-bottom: 20px;
+}
+
+.content-panel-shop-now p{
+    margin-bottom: 20px;
+}
+
+.content-factory{
+    background-color: var(--color2);
+}
+
+.content-charity{
+    border-top: 6px solid var( --color13 ); 
+    border-bottom: 6px solid var( --color13 );
+    background-color: var( --color13 );
+}
+
+.policy{
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+}
+
+.policy h1{
+    font-size: 1.6em;
+    font-weight: 400;
+
+}
+
+.policy h2{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.policy h3{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+.policy p{
+    margin-bottom: 2px;
+}
+    
+.content-urologist{
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 0px;
+    padding-bottom: 30px
+}
+
+@media only screen and (max-width: 767px){
+    .content-urologist{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.content-urologist-image{
+    padding-bottom: 0px;
+}
+
+.content-urologist-image img{
+    padding-bottom: 20px;
+}
+
+.content-urologist-caption{
+    padding-bottom: 0px;
+}
+
+.content-medical-introduction{
+    background-color: var( --color13 );
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.content-medical-link-to-healthcare{
+    background-color: var(--color2);
+    padding-top: 60px;
+    padding-bottom: 90px;
+}
+
+.content-medical-link-to-healthcare h1{
+    font-size: 2em;
+}
+
+.clinical-trials-container{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.content-clinical-trials-introduction{
+    background-color: var(--color10);
+    padding-top: 30px;
+    padding-bottom: 0px;
+    color: var( --color12 ); 
+}
+
+.accordion-open .clinical-trial-read-more{
+    display:none; 
+}
+
+.accordion-close .clinical-trial-read-more{
+    color: var( --color1); 
+}
+
+
+.bella-signature{
+    font-size: 1em;
+    font-style: italic;
+}
+
+.content-clinical-trial-details{
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: var(--color3);
+    color: var( --color12 );
+}
+
+.content-clinical-trial-disclosure{
+    background-color: var( --color13 );
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: var(--color3);
+    color: var( --color12 );
+}
+
+.content-clinical-trial-disclosure h2{
+    font-size: 1.3em;
+}
+
+.content-clinical-trial-disclosure p{
+    font-size: 1em;
+}
+
+.content-how-it-works{
+    background-color: var(--color2);
+    padding-top: 15px; 
+}
+
+.welcome-healthcare-professionals{
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Button */ 
+a.standard-button, 
+.call-to-action a.button, 
+a.button, 
+a.button:active, 
+a.button:visited, 
+.template-product article .add-to-cart .button, 
+.main-header .cart .recently-added .button{
+    background-color: var(--color6);
+    text-transform: none;
+    font-weight: normal;
+    font-size: 14px; 
+    margin-top: 10px;
+    color: var( --color13 ); 
+    height: 45px;
+}
+
+.template-product article .add-to-cart .button{
+    height: 43px;
+    width: 231px;
+}
+
+div.add-to-cart{
+    width: 231px!important;
+}
+
+/* Add to cart button container div */ 
+.add-to-cart{
+    padding-top: 21px;
+}
+
+a.standard-button:hover, .call-to-action, .button:hover, a.button:hover, .template-product article .add-to-cart .button:hover{
+    background-color: var(--color10);
+}
+
+
+.content-healthcare-signup-intro{
+    background-color: var(--color2);
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+.content-healthcare-signup-form{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: var(--color2);
+}
+
+.be-assured-row{
+    padding-bottom: 0px;
+}
+
+.live-better-love-better-row{
+    padding-top: 0px;
+}
+
+/* Video Content */
+.content-video-row{
+    background-color: var(--color2);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 767px){
+    .content-video{
+        padding-top: 20px;
+    }
+}
+
+
+.whats-in-the-box-row{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-top: 1px solid #ddd; 
+}
+
+.whats-in-the-box-row h1{
+    font-size: 16pt;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+    font-weight: normal;
+    margin-top: 0px;
+    line-height: 24px;
+}
+
+.whats-in-the-box-row ul li{
+    margin-left: -15px;
+    font-size: 15px;
+}
+
+.whats-in-the-box-column li{
+    font-size: 14px;
+    line-height: 19pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+@media only screen and (max-width: 767px){
+        .whats-in-the-box-row{
+        padding-left: 60px;
+        padding-right: 60px;
+        text-align: center;
+    }
+    
+    .whats-in-the-box-row ul li{
+        margin-left: -40px;
+        font-size: 14px;
+        list-style:none; 
+    }
+}
+
+
+@media only screen and (max-width: 767px){
+    
+    .about-us-title{
+        padding-left: 30px;
+    }
+    
+    .about-us-content{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .about-us-image{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    
+    .content-charity img{
+        width: 300px;
+    }
+    
+    .content-urologist-caption{
+        padding-bottom: 5px;
+    }
+    
+} 
+/* END Media Only */  
+
+/* MailChimp Forms */
+    
+#mc_embed_signup{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 3px 3px 5px grey;
+}
+
+div.mc-field-group input{
+    height: 40px;
+    font-family: 'proxima-nova';
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+div.mc-field-group label{
+    font-family: 'proxima-nova';
+    font-size: 11pt;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+
+div.mc-field-group select{
+    height: 40px;
+}
+
+#mc_embed_signup .button{
+    background-color: var(--color6)!important;
+    text-transform: none!important;
+    font-weight: normal!important;
+    font-size: 14px!important; 
+    margin-top: 10px!important;
+    color: var( --color13 )!important; 
+    height: 45px!important;
+}
+
+#mc_embed_signup .button a:hover{
+    background-color var( --color10 );
+}
+
+    
+/* Accordion */
+
+.content-faq-header{
+    background-color: var(--color3);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content-faq-header h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.content-faq-container h1{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.accordion {
+    margin: 0;
+    padding: 0px;
+    padding-top: 20px;
+    text-decoration: none;
+    color: var(--color4);
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+    cursor: hand;
+    font-family: "Crete Round"; 
+
+}
+
+.accordion-open {
+    cursor: pointer;
+    cursor: hand;
+    color: var(--color1); 
+    font-family: "Crete Round"; 
+}
+
+.accordion-open span {
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 25%;
+    
+}
+
+.accordion-open span {
+    
+}
+
+.accordion-close span {
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 25%;
+}
+
+.faqpage div.container {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+
+}
+
+.faqpage div.content {
+    margin: 0;
+    padding: 0px
+    font-size: 11px;
+    line-height: 1.5em;
+   
+}
+
+.faqpage div.content ul {
+    padding: 0;
+    margin: 0;
+    padding: 3px;
+}
+
+.faqpage div.content p {
+    padding: 0;
+    margin: -5px 0px 8px
+    padding: 3px;
+    font-size: 14px;
+    color: var( --color12 );
+    line-height: 22px;
+}
+
+.faqpage div.content ul li {
+    list-style-position: inside;
+    line-height: 25px;
+}
+
+
+
+
+</style>

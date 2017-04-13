@@ -1,0 +1,217 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+
+  <!-- FullStory --> 
+  <script>
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'www.fullstory.com';
+    window['_fs_org'] = '3S5DS';
+    window['_fs_namespace'] = 'FS';
+    (function(m,n,e,t,l,o,g,y){
+        if (e in m && m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); return;}
+        g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];
+        o=n.createElement(t);o.async=1;o.src='https://'+_fs_host+'/s/fs.js';
+        y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+        g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};
+        g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+        g.clearUserCookie=function(c,d,i){if(!c || document.cookie.match('fs_uid=[`;`]*`[`;`]*`[`;`]*`')){
+        d=n.domain;while(1){n.cookie='fs_uid=;domain='+d+
+        ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
+    })(window,document,window['_fs_namespace'],'script','user');
+  </script>
+
+
+  <!--TypeKit Fonts -->
+  <script src="https://use.typekit.net/xej3irs.js"></script>
+  <script>try{Typekit.load({ async: false });}catch(e){}</script>
+  
+  <!-- Google Fonts--> 
+  <link href="https://fonts.googleapis.com/css?family=Crete+Round:400,400i" rel="stylesheet">
+  
+  <!-- FontAwesome --> 
+  <script src="https://use.fontawesome.com/07d6f0c85f.js"></script>
+
+  <!-- Blockshop Theme Version 3.0 by Troop Themes - http://troopthemes.com/  -->
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {% if settings.favicon != blank %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+  {% endif %}
+
+  {% if template == 'index' %}
+    <title>{{ page_title }}</title>
+  {% elsif template == 'password' %}
+    <title>{{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+  <meta name="description" content="{{ page_description }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+
+  {% include 'advanced-settings' with 'variables' %}
+  {% include 'snippet-fb-open-graph-tags' %}
+  {% include 'snippet-webfont' %}
+
+  {{ content_for_header }}
+
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+  {% include 'advanced-settings' with 'styles' %}
+  {% include 'custom-styles' %}
+
+  <!--[if IE]>
+    <style>
+      .main-header .currency-selector select {
+        width: 80px;
+        padding-right: 10px;
+      }
+    </style>
+  <![endif]-->
+
+  <!-- >= IE 11 -->
+  <style>
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .main-header .currency-selector select {
+        width: 80px;
+        padding-right: 10px;
+      }
+    }
+  </style>
+
+
+
+  {{ 'custom.modernizr.js' | asset_url | script_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
+  {{ '//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js' | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+  {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  <script>
+    var twitterID = '{{ settings.twitter_username }}',
+    general_external_links_enabled = true,
+    general_scroll_to_active_item = true,
+    shop_url = '{{ shop.url }}',
+    shop_money_format = '{{ shop.money_format | strip_html | replace: "'", '"' | strip }}',
+    currency_switcher_enabled = {{ settings.show_multiple_currencies }},
+    popup_config = {
+      enabled               : {{ settings.popup--enabled }},
+      newsletter_enabled    : {{ settings.popup--newsletter--enabled }},
+      social_icons_enabled  : {{ settings.popup--social-icons--enabled }},
+      show_image_enabled    : '{{ settings.popup--image.size }}',
+      image_link            : "{{ settings.popup--image-url }}",
+      seconds_until         : {{ settings.popup--seconds }},
+      show_image_url        : '{{ settings.popup--image | img_url: "1200x" | img_tag: settings.popup--image.alt | default: "" }}',
+      page_content          : '{{ settings.popup--page-content }}',
+      days_until            : '{{ settings.popup--days }}',
+      storage_key           : 'troop_popup_storage'
+    };
+
+    popup_config.show_image_enabled = popup_config.show_image_enabled > 0 ?
+                                      true :
+                                      false;
+
+    // newer naming convention
+    var theme = {};
+    theme.shop_currency = '{{ shop.currency }}';
+    theme.translation = {};
+    theme.translation.newsletter_success_message = '{{ "layout.footer.newsletter_success_message" | t }}';
+    theme.translation.newsletter_email_blank = '{{ "layout.footer.newsletter_email_blank" | t }}';
+    theme.preload_image = '{{ "popup.jpg" | asset_url }}';
+
+  </script>
+
+  {% if settings.show_multiple_currencies %}
+    {% include 'snippet-currencies' %}
+  {% endif %}
+
+  {{ 'plugins.js' | asset_url | script_tag }}
+  {{ 'shop.js' | asset_url | script_tag }}
+  
+ 
+
+
+	{{ shop.metafields.loox["global_html_head"] }}
+</head>
+
+
+
+<body class="page-{{ page_title | handle }} {% if customer %}customer-logged-in {% endif %}template-{{ template | split: '.' | first | remove: '/' | remove: '_' }}">
+
+  {% include 'icon-sprite.svg' %}
+
+  {% if template <> 'blog'  %}
+      {% section 'header' %}
+  {%endif%} 
+
+  <section class="main-content">
+    {{ content_for_layout }}
+  </section>
+  
+ 
+  {% if template <> 'blog' and template <> 'cart' %}
+      {% section 'footer' %}
+  {%endif%} 
+
+
+  {% unless template contains 'password' %}
+    <button class="popup-modal-close">✕</button>
+    <div class="popup-modal-mask"></div>
+  {% endunless %}
+
+  <!--<style> iframe#admin_bar_iframe { display: none !important; } </style>-->
+
+
+
+<!-- Start of LiveChat (www.livechatinc.com) code
+<script type="text/javascript">
+window.__lc = window.__lc || {};
+window.__lc.license = 8549116;
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+</script>
+End of LiveChat code -->
+
+
+<script>
+jQuery(function() {
+  jQuery('.swatch :radio').change(function() {
+    var optionIndex = jQuery(this).closest('.swatch').attr('data-option-index');
+    var optionValue = jQuery(this).val();
+    jQuery(this)
+      .closest('form')
+      .find('.single-option-selector')
+      .eq(optionIndex)
+      .val(optionValue)
+      .trigger('change');
+  });
+});
+</script>
+
+<!-- Hide unavailable options in product drop-downs --> 
+<!-- See https://help.shopify.com/themes/customization/navigation/link-product-options-in-menus --> 
+{% include 'linked-options' %}  
+
+
+	{{ shop.metafields.loox["global_html_body"] }}
+</body>
+</html>

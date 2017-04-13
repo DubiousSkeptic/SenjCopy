@@ -1,0 +1,277 @@
+{%- assign block_count = section.blocks.size -%}
+
+{% if block_count > 0 %}
+  {%- assign column_count = 12 | divided_by: block_count -%}
+{% endif %}
+
+<footer class="main-footer">
+    
+  {% if template == 'index' %}
+    
+    <div class="row warnings-title">
+        <div class="column large-12">
+          <p>Important Safety Information</p>
+        </div>
+    </div>
+    <div class="row warnings">
+        <div class="column large-6">
+             <ul>
+                <li>If you have symptoms of erectile dysfunction, i.e., inability to achieve an erection that is sufficient for sexual intercourse, consult your physician prior to using this device to avoid a potentially harmful delay in diagnosing any of the most common causes of this condition, such as diabetes, multiple sclerosis, cirrhosis of the liver, chronic renal failure, or alcoholism.</li>
+                <li>Do not use the device if you have decreased sensation of pain in the area of the penis because decreased pain sensation may inhibit your ability to know whether you are being injured by the device.</li>
+                <li>Do not use the device if you have decreased hand strength because this may make removal of the device difficult.</li>
+                <li>Alternative treatments for erectile dysfunction are available, such as counseling, drug therapy, hormonal therapy, vascular surgery, and implanted prosthetic devices. Contact your physician for more information regarding these alternative treatments.</li>
+                <li>Do not fall asleep while wearing Senjja, since prolonged use of Senjja may cause permanent injury to the penis.</li>
+                <li>Allow at least 60 minutes between uses, as more frequent use may increase the risk of injury to the penis.</li>
+                <li>Do not use Senjja under the influence of alcohol or drugs, since such use may impair the user’s judgment and increase the risk of injury to the penis.</li>
+                <li>Misuse of Senjja may cause bruising, painful injury, or permanent damage to the penis.</li>
+                <li>Senjja does not prevent pregnancy.</li>
+            </ul>
+        </div>
+        <div class="column large-6">
+            <ul>
+                <li>Use of Senjja may aggravate already existing medical conditions such as Peyronie’s disease (the formation of hardened tissue in the penis that causes pain, curvature, and distortion, usually during erection), priapism (persistent, usually painful erection of the penis as a consequence of disease and not related to sexual arousal) and urethral strictures (urethral stricture is an area of hardened tissue, which narrows the urethra sometimes making it difficult to urinate).</li>
+                <li>Limit use of Senjja to no longer than 60 minutes per use.</li>
+                <li>Prolonged use of Senjja (i.e., without removal) may cause permanent injury to the penis.</li>
+                <li>Senjja use may bruise or rupture the blood vessels within the penis or scrotum, resulting in petechiae (a small purplish spot caused by a minute hemorrhage), hemorrhage (flow of blood from ruptured blood vessels), or the formation of a hematoma (localized swelling filled with blood resulting from a break in a blood vessel).</li>
+                <li>Senjja is intended to enhance the sexual experience and/or treat erectile dysfunction.</li>
+                <li>Senjja is designed for mature men with no medical conditions that would contraindicate safe usage.</li> 
+                <li>Consult a physician if any complications occur and discontinue use of the device if complications continue.</li>
+                <li>Senjja is designed for multiple uses however Senjja should be replaced when signs of wear are apparent.</li> 
+            </ul>
+        </div>
+    </div>
+  
+  {%endif%}  
+    
+   <div class="row bottom">
+   
+    <!-- Logo --> 
+    <div class="large-2 columns footer-logo">
+        <img src="{{ 'Senjja-Logo-Outlined-200x199.png' | file_img_url: '70x70'}}"/>
+    </div>
+
+    {% for block in section.blocks limit: block_count %}
+
+        <!-- SENJJA --> 
+        {% case block.type %}
+          {% when 'about' %}
+          <div class="large-4 columns {{ block.type }}">
+
+            <h2 class="title">{{ block.settings.about-title }}</h2>
+            <div class="content">
+                <p><b>Copyright Exia Biomedical 2017.</b></p>
+                <p class="exia-mission">Exia's mission is to help people get the most out of life through biomedical innovation.</p>
+                <p>Senjja and S' are pending trademarks of Exia Biomedical.</p>
+                <p>Canadian Patent No. 2,933,312</p>
+            </div>
+            
+            
+            <div class="health-canada-logo-wrapper">
+                <div class="health-canada-logo"> 
+                     <img src="{{ 'CanadaFlagWhite50x25.png' | file_img_url: '50x25'}}"/>
+                </div>
+                <div class="health-canada-logo-description">
+                    <p>
+                        <a class="health-canada-link" href="{{shop.url}}/pages/healthcanada">
+                        Health Canada Medical Device<br/>
+                        Establishment License #6734  <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+  
+            
+          {% when 'menu' %}
+          
+          <!-- INFO Menu list: Refunds, Exchanges etc. --> 
+          <div class="large-3 columns {{ block.type }}">
+            <h2 class="title">{{ block.settings.menu-title }}</h2>
+
+            <div class="content">
+              {% if linklists[block.settings.menu].links.size > 0 %}
+                {% assign footer_nav = block.settings.menu %}
+
+                <ul class="footer-nav plain-list" role="navigation">
+                  {% for link in linklists[footer_nav].links %}
+                    <li>
+                      <a href="{{ link.url }}" title="{{ link.title }}">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+
+          {% when 'subscribe' %}
+        <div class="large-3 columns {{ block.type }}">
+
+            <!-- Social --> 
+            {% assign show_social = false %}
+            {% if settings.footer-facebook-follow-url.size > 0 or
+                  settings.footer-twitter-follow-url.size > 0  or
+                  settings.footer-instagram-follow-url.size > 0 or
+                  settings.footer-pinterest-follow-url.size > 0 or
+                  settings.footer-tumblr-follow-url.size > 0 or
+                  settings.footer-vimeo-follow-url.size > 0 or
+                  settings.footer-youtube-follow-url.size > 0 or
+                  settings.footer-google-plus-follow-url.size > 0 %}
+              {% assign show_social = true %}
+            {% endif %}
+
+            {% if block.settings.subscribe--show-social-icons == false %}
+              {% assign show_social = false %}
+            {% endif %}
+
+            <!-- Newsletter --> 
+            {% if block.settings.subscribe--show-newsletter or show_social %}
+              {% assign newsletter_title = 'layout.footer.newsletter_title' | t %}
+              {% if newsletter_title.size > 0 %}
+                <h2 class="title">Social</h2>
+              {% endif %}
+            {% endif %}
+
+            <div class="content">
+              {% if block.settings.subscribe--show-newsletter or settings.popup--newsletter--enabled %}
+                <div id="mailing-list-module" {% if block.settings.subscribe--show-newsletter == false and settings.popup--newsletter--enabled %}style="display:none;"{% endif %}>
+                  {% assign newsletter_subtitle = 'layout.footer.newsletter_subtitle' | t %}
+                  {% if newsletter_subtitle.size > 0 %}
+                    <p>{{ newsletter_subtitle }}</p>
+                  {% endif %}
+
+                  {% form 'customer' %}
+                    {% if form.posted_successfully? %}
+                      <p class="success feedback">
+                        {{ 'layout.footer.newsletter_success_message' | t }}
+                      </p>
+                    {% endif %}
+                    {% if form.errors %}
+                      <p class="error feedback">
+                        {% for field in form.errors %}
+                          {{ field }} {{ form.errors.messages[field] }}
+                        {% endfor %}
+                      </p>
+                    {% endif %}
+
+                    <input type="hidden" id="contact_tags" name="contact[tags]" value="newsletter" />
+                    <input type="hidden" id="newsletter-first-name" name="contact[first_name]" value="Subscriber" />
+                    <input type="hidden" id="newsletter-last-name" name="contact[last_name]" value="Newsletter" />
+                    <input type="email" placeholder="{{ 'layout.footer.newsletter_placeholder' | t }}" name="contact[email]" />
+                    <input type="submit" class="button prefix" value="{{ 'layout.footer.newsletter_button' | t }}" name="subscribe" id="email-submit" />
+
+                    {% if form.posted_successfully? or form.errors %}
+                      <script>window.location.hash = '#mailing-list-module';</script>
+                    {% endif %}
+                  {% endform %}
+                </div> <!-- #mailing-list-module -->
+              {% endif %}
+
+              {% if show_social %}
+                <div class="social-follow">
+                  {% include 'snippet-social-follow' %}
+                </div>
+              {% endif %}
+            </div> <!-- .content -->
+
+        {% endcase %}
+
+      </div> <!-- .columns -->
+    {% endfor %}
+  </div> <!-- .row.bottom -->
+
+  {% if section.blocks.size == 0 and
+        section.settings.footer-payment-options-show == false %}
+    {% include 'snippet-no-blocks' %}
+  {% endif %}
+
+<!-- 
+  {% unless shop.enabled_payment_types == empty %}
+    {% if section.settings.footer-payment-options-show %}
+      <div class="row">
+        <div class="columns">
+            <ul class="payment-options">
+              {% for type in shop.enabled_payment_types %}
+                <li>
+                  {% capture icon_name %}payment-{{type}}{% endcapture %}
+                  {% include 'snippet-symbol' with icon_name %}
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+      </div>
+    {% endif %}
+  {% endunless %}
+--> 
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section--footer",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "footer-payment-options-show",
+      "label": "Enable payment logos",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "about",
+      "name": "About store",
+      "settings": [
+        {
+          "type": "text",
+          "id": "about-title",
+          "label": "Title",
+          "default": "Store"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Designed with love by Troop Themes<p>"
+        }
+      ]
+    },
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu-title",
+          "label": "Title",
+          "default": "Info"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer"
+        }
+      ]
+    },
+    {
+      "type": "subscribe",
+      "name": "Subscribe",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "subscribe--show-newsletter",
+          "label": "Show newsletter",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "subscribe--show-social-icons",
+          "label": "Show social icons",
+          "default": true
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

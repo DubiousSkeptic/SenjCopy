@@ -1,0 +1,101 @@
+<!-- Header banner --> 
+<div class="row full-width content-panel medical-page-banner">
+    <div class="column large-7 small-1"> 
+    </div>
+    <div class="column large-5 small-11 medical-page-banner-caption">
+        <div class="medical-page-banner-caption-wrapper">
+            <h1>Clinically proven</h1>
+            <p>"We conducted controlled in-office clinical trials on a select 
+                group of men with severe erectile dysfunction. The addition of Senjja to the therapy 
+                converted treatment failures to rigidity sufficient for intercourse for 50% of men."</p>
+                <p class="bella-signature">Dr. Anthony J Bella, MD FRCS(C)</p>
+        </div>
+    </div>
+</div>
+
+<!-- Our Doctor --> 
+<div class="row full-width">
+    <div class="column centered-title-panel medical-bella-resume-title">
+        <h2>Dr. Anthony J Bella</h2>
+    </div>
+    <div class="column large-6 medical-bella-resume-1">
+        <p>Dr. Anthony J Bella, MD FRCS(C), is a urological surgeon and researcher, with subspecialty
+            expertise in Men’s Health. From 2010 to 2015, he held the Greta and Hansen Chair in Men’s
+            Health Research at the University of Ottawa, Canada, and was Assistant Professor of Urology,
+            Department of Surgery, University of Ottawa from 2007 to 2015. Dr. Bella is currently medical
+            director of Ottawa Urology and Men’s Health, Ottawa, Canada.</p>
+            
+            <p>In 2005, Dr. Bella was named a Fellow of the Royal College of Surgeons, Canada (Urology)
+        and then completed a combined research and clinical fellowship in Neurourology and Erectile
+        Dysfunction at the University of California San Francisco. In 2007, Dr. Bella returned to
+        Canada, and in addition to his clinical and surgical responsibilities, was named Associate
+        Scientist, Neuroscience at the OHRI, University of Ottawa, maintaining an active neuroscience
+        laboratory through 2013.</p>
+    </div>
+    <div class="column large-6 medical-bella-resume-2">
+        <p>Dr. Bella has coauthored more than 100 peer-reviewed publications and book chapters in the
+        medical literature focusing on both clinical care and de novo research.</p>
+        <p>Dr. Bella has widely consulted for the pharmaceutical industry over the past decade, and has
+        held advisory positions for Eli Lilly, Pfizer, Bayer, Abbott, and Endo Pharmaceuticals/American
+        Medical Systems. Dr. Bella is a member of the Canadian Urological Association, American
+        Urological Association, International Society for Sexual Medicine, Sexual Medicine Society of
+        North America, and currently holds medical and surgical licensure in Canada and California.</p>
+    </div> 
+</div>
+
+
+<!-- Healthcare Professionals, Patients --> 
+<div class="row full-width content-panel content-medical-link-to-healthcare">
+    <div class="column large-12 centered-panel-no-padding">
+        <h2>Healthcare professionals</h2>
+        <p>Click the below to find out how to stay informed about Senjja.</p>
+        <a class="button standard-button" href="{{shop.url}}/pages/healthcare-professionals">Subscribe to updates</a>
+    </div>
+    <!-- 
+    <div class="column large-12 content-panel centered-panel-no-padding">
+        <h2>Patients</h2>
+        <p>Click the link below to find out how to ask your doctor about Senjja.</p>
+        <a href="{{shop.url}}/pages/ask-your-doctor">Ask your doctor</a>
+    </div>
+    -->
+</div>
+
+
+<div class="row full-width one-panel-content content-faq-container clinical-trials-container">
+    <div class="column large-12">
+        <div class="faqpage">
+            <div class="accordion" id="section1">
+                {% include 'snippet-clinical-trial-1-header' %}
+            </div>
+                <div class="container">
+                    <div class="content">
+                    {% include 'snippet-clinical-trial-1' %}
+                    </div>
+                </div>
+            <hr style="margin-top: 100px">
+            <div class="accordion" id="section2">
+                {% include 'snippet-clinical-trial-2-header' %}
+            </div>
+                <div class="container">
+                    <div class="content">
+                    {% include 'snippet-clinical-trial-2' %}
+                    </div>
+                </div>
+         
+        </div>
+    </div>
+</div>
+
+
+<!-- FAQ code From https://www.envision.io/blogs/ecommerce-pulse/28832705-how-to-add-an-faq-accordion-to-your-shopify-store --> 
+<script type="text/javascript" src="{{ 'jquery_accordion.js' | asset_url }}"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('.accordion').accordion({
+
+cookieName: 'accordion_nav'
+});
+});
+</script>
+
+

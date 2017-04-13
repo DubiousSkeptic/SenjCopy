@@ -1,0 +1,115 @@
+{% comment %} Typography {% endcomment %}
+{% if advanced-settings == 'variables' %}
+  {% assign advanced--font--typekit-id = '' %}
+  {% assign advanced--font--logo--google = '' %}
+  {% assign advanced--font--logo--typekit = '' %}
+  {% assign advanced--font--nav--google = '' %}
+  {% assign advanced--font--nav--typekit = '' %}
+  {% assign advanced--font--heading--google = '' %}
+  {% assign advanced--font--heading--typekit = '' %}
+  {% assign advanced--font--accent--google = '' %}
+  {% assign advanced--font--accent--typekit = '' %}
+  {% assign advanced--font--text--google = '' %}
+  {% assign advanced--font--text--typekit = '' %}
+{% endif %}
+
+
+{% if advanced-settings == 'styles' %}
+  <style>
+
+    {% if advanced--font--logo--typekit.size > 0 %}
+      .main-header h1.title { font-family: "{{ advanced--font--logo--typekit }}"; }
+    {% elsif advanced--font--logo--google.size > 0 %}
+      .main-header h1.title { font-family: "{{ advanced--font--logo--google }}"; }
+    {% endif %}
+
+    {% if advanced--font--nav--typekit.size > 0 %}
+      .font-nav, .main-header .main-menu .widescreen { font-family: "{{ advanced--font--nav--typekit }}"; }
+    {% elsif advanced--font--nav--google.size > 0 %}
+      .font-nav, .main-header .main-menu .widescreen { font-family: "{{ advanced--font--nav--google }}"; }
+    {% endif %}
+
+    {% if advanced--font--heading--typekit.size > 0 %}
+      .font-headings,
+      .font-title,
+      .font-headings, .template-index .widgets .title,
+      h1, h2, h3, h4, h5, h6,
+      .main-header .main-menu-dropdown-panel .title,
+      .main-header .cart .button, .main-header .cart a.button,
+      .product-grid .title,
+      .template-collection .main-content .description,
+      .template-product article .add-to-cart .button,
+      .template-product .similar-products h2.title,
+      .template-product .similar-products .caption .title,
+      .template-blog .blog-title .text, .template-article .blog-title .text,
+      .template-blog .article .middle-column .title, .template-article .article .middle-column .title,
+      .template-blog .article .middle-column .comments label, .template-article .article .middle-column .comments label {
+        font-family: "{{ advanced--font--heading--typekit }}";
+      }
+    {% elsif advanced--font--heading--google.size > 0 %}
+      .font-headings,
+      .font-title,
+      .font-headings, .template-index .widgets .title,
+      h1, h2, h3, h4, h5, h6,
+      .main-header .main-menu-dropdown-panel .title,
+      .main-header .cart .button, .main-header .cart a.button,
+      .product-grid .title,
+      .template-collection .main-content .description,
+      .template-product article .add-to-cart .button,
+      .template-product .similar-products h2.title,
+      .template-product .similar-products .caption .title,
+      .template-blog .blog-title .text, .template-article .blog-title .text,
+      .template-blog .article .middle-column .title, .template-article .article .middle-column .title,
+      .template-blog .article .middle-column .comments label, .template-article .article .middle-column .comments label { font-family: "{{ advanced--font--heading--google }}";
+      }
+    {% endif %}
+
+    {% if advanced--font--text--typekit.size > 0 %}
+      input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { font-family: "{{ advanced--font--text--typekit }}" !important;  }
+
+      body,
+      .product-grid .price,
+      .template-index .slider .slide .caption a.button,
+      .template-index .widgets .small-promos .caption h2,
+      .template-list-collections .caption .product-count,
+      .template-product header .previous-next a,
+      .template-blog .previous-next a, .template-article .previous-next a,
+      .template-blog .article .middle-column .content, .template-article .article .middle-column .content,
+      .template-blog .article .middle-column .comments .date, .template-article .article .middle-column .comments .date {
+        font-family: "{{ advanced--font--text--typekit }}";
+      }
+    {% elsif advanced--font--text--google.size > 0 %}
+      input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { font-family: "{{ advanced--font--text--google }}" !important;  }
+
+      body,
+      .product-grid .price,
+      .template-index .slider .slide .caption a.button,
+      .template-index .widgets .small-promos .caption h2,
+      .template-list-collections .caption .product-count,
+      .template-product header .previous-next a,
+      .template-blog .previous-next a, .template-article .previous-next a,
+      .template-blog .article .middle-column .content, .template-article .article .middle-column .content,
+      .template-blog .article .middle-column .comments .date, .template-article .article .middle-column .comments .date {
+        font-family: "{{ advanced--font--text--google }}";
+      }
+    {% endif %}
+
+    {% if advanced--font--accent--typekit.size > 0 %}
+      .font-accent,
+      button, .button, a.button,
+      .product-grid .circle,
+      .template-product article .prices .actual-price {
+        font-family: "{{ advanced--font--accent--typekit }}";
+      }
+    {% elsif advanced--font--accent--google.size > 0 %}
+      .font-accent,
+      button, .button, a.button,
+      .product-grid .circle,
+      .template-product article .prices .actual-price {
+        font-family: "{{ advanced--font--accent--google }}";
+      }
+    {% endif %}
+
+
+  </style>
+{% endif %}

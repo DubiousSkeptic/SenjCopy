@@ -1,0 +1,26 @@
+{% if product.metafields.bold_donation.donation_key == 1 %}
+<div class="da_bar_div" style="display:none;">
+  <div class="goal_bar_title" ></div>
+  <div class="progress" >
+    <div class="progress-bar progress-bar-striped active da_bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+      <span class=""><span class="percentage_num">60</span></span>
+    </div>
+    <span class="total_amount" style="float:right; padding-right: 10px;"></span>
+  </div>
+  <div class="goal_summary" ></div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    if(!$(".da_div").length){
+ 
+
+      $('.da_bar_div').append('<link rel="stylesheet" type="text/css" href="https://da.boldapps.net/app_assets/css/donation_styles.css">');
+      $('.da_bar_div').append('<script src="https://da.boldapps.net/assets_embed/js/bootstrap.min.js"><'+'/script>');
+
+      $('.da_bar_div').append('<script class="bold_da_script" async  src="https://da.boldapps.net/donations/generate_donation?product_id={{ product.id }}&shop_url={{ shop.permanent_domain }}.myshopify.com"><' +'/script>');
+    }
+
+  });
+</script>
+{% endif %}

@@ -1,0 +1,122 @@
+{% assign image_count = section.blocks.size %}
+{% if image_count > 4 %}
+  {% assign column_count = 3 %}
+{% else %}
+  {% assign column_count = 12 | divided_by: image_count %}
+{% endif %}
+
+<div class="widgets">
+  <div class="small-promos">
+    <div class="row">
+
+      {% for block in section.blocks limit: image_count %}
+          <div class="columns large-{{ column_count }}">
+            {% case column_count %}
+              {% when 3 %}
+                {%- assign image_size = '250x' -%}
+              {% when 4 %}
+                {%- assign image_size = '345x' -%}
+              {% when 6 %}
+                {%- assign image_size = '600x' -%}
+              {% when 12 %}
+                {%- assign image_size = '1000x' -%}
+            {% endcase %}
+
+            <div class="image-text-widget">
+              {% if block.settings.link.size > 0 %}
+                <a href="{{ block.settings.link }}">
+              {% endif %}
+
+              {% if block.settings.image == blank %}
+                {% include "placeholder-image" with '1x1' %}
+              {% else %}
+                {{ block.settings.image | img_url: image_size | img_tag: block.settings.image.alt | default: '' }}
+              {% endif %}
+
+              {% if block.settings.image-title.size > 0 or block.settings.sub-title.size > 0 %}
+                <div class="caption">
+                  <div class="bg"></div>
+                  <div class="inner">
+                    {% if block.settings.image-title.size > 0 %}
+                      <h1>{{ block.settings.image-title }}</h1>
+                    {% endif %}
+                    {% if block.settings.sub-title.size > 0 %}
+                      <h2>{{ block.settings.sub-title }}</h2>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+
+              {% if block.settings.link.size > 0 %}
+                </a>
+              {% endif %}
+            </div>
+
+          </div>
+
+      {% endfor %}
+
+    </div> <!-- .row -->
+  </div> <!-- .small-promos -->
+</div> <!-- .widgets -->
+
+{% if section.blocks.size == 0 %}
+  {% include 'snippet-no-blocks' %}
+{% endif %}
+
+{% schema %}
+{
+  "class": "section--featured-images",
+  "name": "Gallery",
+  "max_blocks": 8,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        },
+        {
+          "type": "text",
+          "id": "image-title",
+          "label": "Title",
+          "default": "Add your title"
+        },
+        {
+          "type": "text",
+          "id": "sub-title",
+          "label": "Subtitle",
+          "default": "Add your subtitle"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gallery",
+      "category": "Image",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

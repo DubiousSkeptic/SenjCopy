@@ -1,0 +1,17 @@
+<div class="collection-item columns large-4">
+  <a href="{{ collection.url }}">
+    <div class="image-wrapper placeholder">
+      {% include 'placeholder-collection' with snippet-collection-placeholder-item %}
+    </div><!-- .coll-image-wrap -->
+    <div class="caption">
+      <div class="bg"></div>
+      <div class="inner">
+        <div class="title">
+          {{ 'collections.onboarding.title' | t }}
+        </div>
+        <p class="product-count">{{ 'collections.onboarding.num_items' | t }}</p>
+      </div>
+    </div>
+  </a>
+</div>
+{% cycle 'clear-row': '', '', '<div class="clearfix"></div>' %}

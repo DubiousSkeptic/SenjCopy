@@ -1,0 +1,1152 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Blockshop",
+    "theme_author": "Troop Themes",
+    "theme_version": "3.0",
+    "theme_documentation_url": "http:\/\/support.troopthemes.com",
+    "theme_support_email": "support@troopthemes.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color-text",
+        "label": "Text",
+        "default": "#444444"
+      },
+      {
+        "type": "color",
+        "id": "color-text-alt",
+        "label": "Text alternative",
+        "default": "#999999",
+        "info": "A less prominent tone of the text color"
+      },
+      {
+        "type": "color",
+        "id": "color-link",
+        "label": "Link",
+        "default": "#999999"
+      },
+      {
+        "type": "color",
+        "id": "color-link-hover",
+        "label": "Link hover",
+        "default": "#444444"
+      },
+      {
+        "type": "color",
+        "id": "color-page-bg",
+        "label": "Page background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color-panel-bg",
+        "label": "Panels background",
+        "default": "#fafafa"
+      },
+      {
+        "type": "color",
+        "id": "color-border",
+        "label": "Borders",
+        "default": "#ebebeb"
+      },
+      {
+        "type": "color",
+        "id": "color-error",
+        "label": "Important",
+        "default": "#f25a1d"
+      },
+      {
+        "type": "color",
+        "id": "color-button",
+        "label": "Button, promotion bar text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color-button-bg",
+        "label": "Button, promotion bar background",
+        "default": "#444444"
+      },
+      {
+        "type": "color",
+        "id": "color-button-bg-hover",
+        "label": "Button background hover",
+        "default": "#777777"
+      },
+      {
+        "type": "select",
+        "id": "color-twitter-tone",
+        "label": "Twitter widget for",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light theme"
+          },
+          {
+            "value": "dark",
+            "label": "Dark theme"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "label": "Background",
+        "type": "color",
+        "id": "color-header-bg",
+        "default": "#444444"
+      },
+      {
+        "label": "Text",
+        "type": "color",
+        "id": "color-header",
+        "default": "#444444"
+      },
+      {
+        "label": "Cart link",
+        "type": "color",
+        "id": "color-header-cart",
+        "default": "#444444"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "label": "Background",
+        "type": "color",
+        "id": "color-footer-bg",
+        "default": "#bbbbbb"
+      },
+      {
+        "label": "Text",
+        "type": "color",
+        "id": "color-footer",
+        "default": "#333333"
+      },
+      {
+        "type": "header",
+        "content": "Home page - slideshow"
+      },
+      {
+        "label": "Text",
+        "type": "color",
+        "id": "color-slider-caption",
+        "default": "#f7f7f7"
+      },
+      {
+        "label": "Background",
+        "type": "color",
+        "id": "color-slider-caption-bg",
+        "default": "#444444"
+      },
+      {
+        "label": "Button text",
+        "type": "color",
+        "id": "color-slider-button",
+        "default": "#f7f7f7"
+      },
+      {
+        "label": "Button background",
+        "type": "color",
+        "id": "color-slider-button-bg",
+        "default": "#444444"
+      },
+      {
+        "label": "Button background hover",
+        "type": "color",
+        "id": "color-slider-button-hover-bg",
+        "default": "#999"
+      },
+      {
+        "label": "Navigation dots",
+        "type": "color",
+        "id": "color-slider-nav",
+        "default": "#f7f7f7"
+      },
+      {
+        "type": "header",
+        "content": "Home page - other"
+      },
+      {
+        "label": "Featured collection background",
+        "type": "color",
+        "id": "color-product-slider-bg",
+        "default": "#f7f7f7"
+      },
+      {
+        "label": "Featured content background",
+        "type": "color",
+        "id": "color-featured-promo-bg",
+        "default": "#f7f7f7"
+      },
+      {
+        "label": "Social feeds background",
+        "type": "color",
+        "id": "color-social-feed-bg",
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Product grid"
+      },
+      {
+        "label": "Sale text",
+        "type": "color",
+        "id": "color-grid-sale",
+        "default": "#f7f7f7"
+      },
+      {
+        "label": "Sale background",
+        "type": "color",
+        "id": "color-grid-sale-bg",
+        "default": "#444444"
+      },
+      {
+        "label": "Sold out text",
+        "type": "color",
+        "id": "color-grid-sold-out",
+        "default": "#ffffff"
+      },
+      {
+        "label": "Sold out background",
+        "type": "color",
+        "id": "color-grid-sold-out-bg",
+        "default": "#cccccc"
+      },
+      {
+        "type": "header",
+        "content": "Product page"
+      },
+      {
+        "label": "Add to cart button text",
+        "type": "color",
+        "id": "color-product-cart-button",
+        "default": "#444444"
+      },
+      {
+        "label": "Add to cart button background",
+        "type": "color",
+        "id": "color-product-cart-button-bg",
+        "default": "#444444"
+      },
+      {
+        "label": "Add to cart button background hover",
+        "type": "color",
+        "id": "color-product-cart-button-bg-hover",
+        "default": "#999999"
+      },
+      {
+        "type": "header",
+        "content": "Other"
+      },
+      {
+        "label": "Tabs and accordion headers",
+        "type": "color",
+        "id": "color-tabs-accordions",
+        "default": "#ebebeb"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "select",
+        "id": "font-logo",
+        "label": "Logo",
+        "options": [
+          {
+            "value": "sans-serif",
+            "label": "sans-serif",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Brandon Grotesque', 'Brandon Grotesque', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Brandon Grotesque",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Myriad Pro', 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Myriad Pro",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, Helvetica, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Lato', sans-serif",
+            "label": "Lato",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Roboto', sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Signika', sans-serif",
+            "label": "Signika",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Armata', sans-serif",
+            "label": "Armata",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Bree Serif', serif",
+            "label": "Bree Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Lora', serif",
+            "label": "Lora",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Nixie One', serif",
+            "label": "Nixie One",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Droid Serif', serif",
+            "label": "Droid Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "google, 'Lato', sans-serif"
+      },
+      {
+        "type": "select",
+        "id": "font-nav",
+        "label": "Main menu",
+        "options": [
+          {
+            "value": "sans-serif",
+            "label": "sans-serif",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Brandon Grotesque', 'Brandon Grotesque', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Brandon Grotesque",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Myriad Pro', 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Myriad Pro",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, Helvetica, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Lato', sans-serif",
+            "label": "Lato",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Roboto', sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Signika', sans-serif",
+            "label": "Signika",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Armata', sans-serif",
+            "label": "Armata",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Bree Serif', serif",
+            "label": "Bree Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Lora', serif",
+            "label": "Lora",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Nixie One', serif",
+            "label": "Nixie One",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Droid Serif', serif",
+            "label": "Droid Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "google, 'Lato', sans-serif"
+      },
+      {
+        "type": "select",
+        "id": "font-headings",
+        "label": "Headings",
+        "options": [
+          {
+            "value": "sans-serif",
+            "label": "sans-serif",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Brandon Grotesque', 'Brandon Grotesque', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Brandon Grotesque",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Myriad Pro', 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Myriad Pro",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, Helvetica, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Lato', sans-serif",
+            "label": "Lato",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Roboto', sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Signika', sans-serif",
+            "label": "Signika",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Armata', sans-serif",
+            "label": "Armata",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Bree Serif', serif",
+            "label": "Bree Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Lora', serif",
+            "label": "Lora",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Nixie One', serif",
+            "label": "Nixie One",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Droid Serif', serif",
+            "label": "Droid Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "google, 'Lato', sans-serif"
+      },
+      {
+        "type": "select",
+        "id": "font-text",
+        "label": "Body text",
+        "options": [
+          {
+            "value": "sans-serif",
+            "label": "sans-serif",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Brandon Grotesque', 'Brandon Grotesque', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Brandon Grotesque",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Myriad Pro', 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Myriad Pro",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, Helvetica, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Lato', sans-serif",
+            "label": "Lato",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Roboto', sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Signika', sans-serif",
+            "label": "Signika",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Armata', sans-serif",
+            "label": "Armata",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Bree Serif', serif",
+            "label": "Bree Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Lora', serif",
+            "label": "Lora",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Nixie One', serif",
+            "label": "Nixie One",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Droid Serif', serif",
+            "label": "Droid Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif"
+      },
+      {
+        "type": "select",
+        "id": "font-accent",
+        "label": "Accent",
+        "options": [
+          {
+            "value": "sans-serif",
+            "label": "sans-serif",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Brandon Grotesque', 'Brandon Grotesque', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Brandon Grotesque",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Myriad Pro', 'Myriad Pro', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Myriad Pro",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+            "label": "Helvetica\/Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Impact, Charcoal, Helvetica, Arial, sans-serif",
+            "label": "Impact",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Lucida, Helvetica, Arial, sans-serif",
+            "label": "Lucida Grande",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Trebuchet MS, Helvetica, sans-serif",
+            "label": "Trebuchet MS",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Verdana, Helvetica, Arial, sans-serif",
+            "label": "Verdana",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Lato', sans-serif",
+            "label": "Lato",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Roboto', sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Signika', sans-serif",
+            "label": "Signika",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Armata', sans-serif",
+            "label": "Armata",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "google, 'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Garamond, Baskerville, Caslon, serif",
+            "label": "Garamond",
+            "group": "Serif"
+          },
+          {
+            "value": "Georgia, Utopia, 'Times New Roman', Times, serif",
+            "label": "Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Palatino, 'Palatino Linotype', 'Book Antiqua', serif",
+            "label": "Palatino",
+            "group": "Serif"
+          },
+          {
+            "value": "'Times New Roman', Times, serif",
+            "label": "Times New Roman",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Bree Serif', serif",
+            "label": "Bree Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Lora', serif",
+            "label": "Lora",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Nixie One', serif",
+            "label": "Nixie One",
+            "group": "Serif"
+          },
+          {
+            "value": "google, 'Droid Serif', serif",
+            "label": "Droid Serif",
+            "group": "Serif"
+          },
+          {
+            "value": "'Courier New', Courier, monospace",
+            "label": "Courier New",
+            "group": "Monospace"
+          },
+          {
+            "value": "Monaco, 'Lucida Console', 'DejaVu Sans Mono', monospace",
+            "label": "Monaco\/Lucida Console",
+            "group": "Monospace"
+          }
+        ],
+        "default": "google, 'Lato', sans-serif"
+      }
+    ]
+  },
+  {
+    "name": "Product grid",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "hover-image-enabled",
+        "label": "Enable hover image",
+        "default": false,
+        "info": "This will use its second image. You can reorder images in the product's admin page."
+      },
+      {
+        "type": "checkbox",
+        "id": "brand-show",
+        "label": "Show vendor name",
+        "default": true,
+        "info": "e.g. Apple, Shopify"
+      }
+    ]
+  },
+  {
+    "name": "Search",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "search-products-only",
+        "label": "Display products only"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "footer-facebook-follow-url",
+        "label": "Facebook",
+        "info": "https:\/\/www.facebook.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "footer-twitter-follow-url",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "footer-instagram-follow-url",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "footer-vimeo-follow-url",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "footer-pinterest-follow-url",
+        "label": "Pinterest",
+        "info": "https:\/\/www.pinterest.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "footer-youtube-follow-url",
+        "label": "Youtube",
+        "info": "https:\/\/www.youtube.com\/user\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "footer-tumblr-follow-url",
+        "label": "Tumblr",
+        "info": "http:\/\/shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "footer-google-plus-follow-url",
+        "label": "Google plus",
+        "info": "https:\/\/plus.google.com\/+shopify"
+      }
+    ]
+  },
+  {
+    "name": "Popup",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "To test this feature, set the \"Show again after\" list box to \"Test mode\"."
+      },
+      {
+        "type": "checkbox",
+        "id": "popup--enabled",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "popup--image",
+        "label": "Image",
+        "info": "Recommended 600px wide and 1200px wide when only showing image"
+      },
+      {
+        "type": "url",
+        "id": "popup--image-url",
+        "label": "Link to"
+      },
+      {
+        "type": "page",
+        "id": "popup--page-content",
+        "label": "Page content [(?)](http:\/\/support.troopthemes.com\/article\/230-linking-page-content-in-settings)"
+      },
+      {
+        "type": "checkbox",
+        "id": "popup--newsletter--enabled",
+        "label": "Show newsletter form",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "popup--social-icons--enabled",
+        "label": "Show social icons",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "popup--seconds",
+        "label": "Show in",
+        "options": [
+          {
+            "value": "1",
+            "label": "1 second"
+          },
+          {
+            "value": "2",
+            "label": "2 seconds"
+          },
+          {
+            "value": "5",
+            "label": "5 seconds"
+          },
+          {
+            "value": "10",
+            "label": "10 seconds"
+          },
+          {
+            "value": "30",
+            "label": "30 seconds"
+          },
+          {
+            "value": "60",
+            "label": "60 seconds"
+          },
+          {
+            "value": "120",
+            "label": "120 seconds"
+          }
+        ],
+        "default": "5"
+      },
+      {
+        "type": "select",
+        "id": "popup--days",
+        "label": "Show again after",
+        "options": [
+          {
+            "value": "test_mode",
+            "label": "Test mode (always show)"
+          },
+          {
+            "value": "2",
+            "label": "2 days"
+          },
+          {
+            "value": "7",
+            "label": "7 days"
+          },
+          {
+            "value": "14",
+            "label": "14 days"
+          },
+          {
+            "value": "30",
+            "label": "30 days"
+          },
+          {
+            "value": "90",
+            "label": "90 days"
+          }
+        ],
+        "default": "30"
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "To offer multiple currencies on your online store, you must first [edit your store's currency formatting](https:\/\/docs.shopify.com\/support\/settings\/general\/tell-my-script-where-to-find-money-formats)."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_multiple_currencies",
+        "label": "Enable currency conversion",
+        "default": true,
+        "info": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency."
+      },
+      {
+        "type": "select",
+        "id": "currency_format",
+        "label": "Format",
+        "options": [
+          {
+            "value": "money_format",
+            "label": "Without currency ($10.00)"
+          },
+          {
+            "value": "money_with_currency_format",
+            "label": "With currency ($10.00 CAD)"
+          }
+        ],
+        "default": "money_with_currency_format"
+      },
+      {
+        "type": "text",
+        "id": "supported_currencies",
+        "label": "Supported currencies",
+        "default": "INR GBP CAD USD AUD EUR JPY",
+        "info": "Use the country's ISO [currency code](http:\/\/www.xe.com\/iso4217.php). Separate your currency codes with a space."
+      },
+      {
+        "type": "text",
+        "id": "default_currency",
+        "label": "Default currency",
+        "default": "USD"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Will be scaled down to 32 x 32px"
+      }
+    ]
+  }
+]

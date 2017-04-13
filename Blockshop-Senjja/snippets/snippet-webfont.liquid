@@ -1,0 +1,87 @@
+{% assign google_font_families = '' %}
+
+{% unless advanced--font--logo--google.size > 0 or advanced--font--logo--typekit.size > 0 %}
+  {% assign font_family = settings.font-logo %}
+  {% assign google_check = font_family | truncate: 6, '' %}
+  {% if google_check == 'google' %}
+    {% assign words = font_family | split: ', ' %}
+    {% capture google_font_families %}{{ google_font_families }}'{{ words[1] | replace: "'", "" }}:400,700', {% endcapture %}
+  {% endif %}
+{% endunless %}
+
+{% unless advanced--font--nav--google.size > 0 or advanced--font--nav--typekit.size > 0 %}
+  {% assign font_family = settings.font-nav %}
+  {% assign google_check = font_family | truncate: 6, '' %}
+  {% if google_check == 'google' %}
+    {% assign words = font_family | split: ', ' %}
+    {% capture google_font_families %}{{ google_font_families }}'{{ words[1] | replace: "'", "" }}:400,700', {% endcapture %}
+  {% endif %}
+{% endunless %}
+
+{% unless advanced--font--accent--google.size > 0 or advanced--font--accent--typekit.size > 0 %}
+  {% assign font_family = settings.font-accent %}
+  {% assign google_check = font_family | truncate: 6, '' %}
+  {% if google_check == 'google' %}
+    {% assign words = font_family | split: ', ' %}
+    {% capture google_font_families %}{{ google_font_families }}'{{ words[1] | replace: "'", "" }}:400,700', {% endcapture %}
+  {% endif %}
+{% endunless %}
+
+{% unless advanced--font--heading--google.size > 0 or advanced--font--heading--typekit.size > 0 %}
+  {% assign font_family = settings.font-heading %}
+  {% assign google_check = font_family | truncate: 6, '' %}
+  {% if google_check == 'google' %}
+    {% assign words = font_family | split: ', ' %}
+    {% capture google_font_families %}{{ google_font_families }}'{{ words[1] | replace: "'", "" }}:400,700', {% endcapture %}
+  {% endif %}
+{% endunless %}
+
+{% unless advanced--font--text--google.size > 0 or advanced--font--text--typekit.size > 0 %}
+  {% assign font_family = settings.font-text %}
+  {% assign google_check = font_family | truncate: 6, '' %}
+  {% if google_check == 'google' %}
+    {% assign words = font_family | split: ', ' %}
+    {% capture google_font_families %}{{ google_font_families }}'{{ words[1] | replace: "'", "" }}:400,700', {% endcapture %}
+  {% endif %}
+{% endunless %}
+
+{% if advanced--font--logo--google.size > 0  %}
+  {% capture google_font_families %}{{ google_font_families }}'{{ advanced--font--logo--google }}:400,700', {% endcapture %}
+{% endif %}
+
+{% if advanced--font--nav--google.size > 0  %}
+  {% capture google_font_families %}{{ google_font_families }}'{{ advanced--font--nav--google }}:400,700', {% endcapture %}
+{% endif %}
+
+{% if advanced--font--accent--google.size > 0  %}
+  {% capture google_font_families %}{{ google_font_families }}'{{ advanced--font--accent--google }}:400,700', {% endcapture %}
+{% endif %}
+
+{% if advanced--font--heading--google.size > 0  %}
+  {% capture google_font_families %}{{ google_font_families }}'{{ advanced--font--heading--google }}:400,700', {% endcapture %}
+{% endif %}
+
+{% if advanced--font--text--google.size > 0 %}
+  {% capture google_font_families %}{{ google_font_families }}'{{ advanced--font--text--google }}:400,700', {% endcapture %}
+{% endif %}
+
+{% assign typekit_enabled = false %}
+{% if advanced--font--typekit-id.size > 0 %}
+  {% if advanced--font--logo--typekit.size > 0 or advanced--font--nav--typekit.size > 0 or advanced--font--accent--typekit.size > 0 or advanced--font--heading--typekit.size > 0 or advanced--font--text--typekit.size > 0 %}
+    {% assign typekit_enabled = true %}
+  {% endif %}
+{% endif %}
+
+{% if google_font_families.size > 0 or typekit_enabled %}
+<script>
+  WebFontConfig = {
+    {% if typekit_enabled %}
+    typekit: { id: '{{ advanced--font--typekit-id }}' },
+    {% endif %}
+    {% if google_font_families.size > 0 %}
+    google: { families: [{{ google_font_families }}] }
+    {% endif %}
+  };
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+{% endif %}
