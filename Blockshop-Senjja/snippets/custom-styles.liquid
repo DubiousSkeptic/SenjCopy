@@ -146,12 +146,13 @@ h2{
 
 a, a:active, a:visited{
     font-size: 15px;
-    color: var( --color6 );
-    text-decoration: none!important; 
+    color: var( --color12 );
+    text-decoration: underline!important;
 }
 
 a:link{
-    color: var( --color6 );
+    color: var( --color12 );
+    text-decoration: underline!important;
 }
 
 a:hover{
@@ -243,6 +244,7 @@ div.da_title{
     padding-top: 12px;
     cursor: pointer; 
     border-radius: 2px;
+    text-decoration: none!important;
 }
 
 #customButton:hover{
@@ -442,12 +444,16 @@ div#customer-order{
 }   
 
 /* Help, Account, Cart Buttons */ 
-.main-header .search-account a, .main-header .search-account a:link, .main-header .search-account a.cart-link
+.main-header .search-account a, 
+.main-header .search-account a:link, 
+.main-header .search-account a:active,
+.main-header .search-account a.cart-link
 {
     font-size: 15px;
     font-weight: normal;
     letter-spacing: 0px;
     color: var( --color4 ); 
+    text-decoration: none!important;
 }
 
 /* Cart and Account icons */ 
@@ -642,15 +648,73 @@ p.product-bullets-header{
     color: var( --color12 );
     margin-left: -20px;
     margin-top: 10px;
-    max-width: 300px;
 }
+
 
 .product-description-bullets li{
     margin-bottom: 0px;
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 22px;
     width: 222px;
-    text-align: justify;
+}
+
+.product-description-bullets li a{
+    font-size: 14px;
+}
+
+.product-description{
+    font-size: 18px!important;
+    padding-bottom: 20px;
+    max-width: 300px;
+}
+
+
+@media only screen and (max-width: 767px){
+    
+    div.product-form{
+        background-color: var( --color2);
+        padding-top: 20px;
+        padding-bottom: 40px;
+        max-width: 380px;
+        margin: auto;
+    }
+
+    form.cart-form{
+        width: 300px;
+        margin: auto;
+    }
+    
+    .product-description{
+        text-align: center;
+        padding-left: 10%;
+        padding-right: 10%;
+        max-width: none;
+    }
+    
+    ul.product-description-bullets{
+        width: 300px;
+        margin: auto;
+    }
+    
+    .product-description-bullets li{
+        text-align: center;
+        list-style: none;
+    }
+    
+    p.pre-order-and-save, 
+    p.pre-order-find-out-more,
+    p.actual-price-paragraph, 
+    div.product-description-bullets-div{
+        text-align: center;
+    }
+    
+}
+
+@media only screen and (max-width: 400px){
+    .show-for-small{
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+    }
 }
 
 .product-description{
@@ -664,7 +728,7 @@ p.product-bullets-header{
 }
 
 .template-product article .prices .actual-price{
-    font-size: 24px;
+    font-size: 19px;
     font-weight: bold;
 }
 
@@ -768,7 +832,6 @@ p.product-bullets-header{
          
       } 
 }
-  
 
 
 .template-product .photos{
@@ -799,6 +862,12 @@ p.product-bullets-header{
     margin-top: 30px;
     margin-bottom: 15px;
     color: var( --color1 );
+}
+
+@media only screen and (max-width: 767px){
+    .template-product article .page-title{
+        text-align: center;
+    }
 }
 
 /* Variant listbox */
@@ -847,6 +916,13 @@ div.selector-wrapper{
 .product-reviews-header{
     padding-top: 60px;
     border-top: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 767px){
+    .product-reviews-header{
+        padding-top: 60px;
+        border-top: none;
+    }
 }
 
 /* Weird Loox reivews code section that won't go away */ 
@@ -909,6 +985,7 @@ p.title{
     font-weight: normal;
     letter-spacing: 0px;
     color: var( --color15 ); 
+    text-decoration: none!important;
 }
 
 .main-footer .menu .footer-nav li a:visited{
@@ -926,7 +1003,7 @@ p.title{
 }
 
 .fw--icon:hover{
-    color: var( --color13 ); 
+    color: var( --color14 ); 
 }
 
 div.large-4.columns.about p, #mailing-list-module > p{
@@ -982,6 +1059,8 @@ div.search-account.columns.large-2{
     padding: 6px;
     font-weight: normal;
     letter-spacing: 0px;
+    text-decoration: none!important;
+    text-align: center;
 }
 
 .main-header .mobile-tools{
@@ -989,7 +1068,14 @@ div.search-account.columns.large-2{
     padding-left: 20px;
 }
 
-    
+.main-header .mobile-tools a{
+    text-decoration: none!important;
+}
+
+.main-header .mobile-tools a:hover{
+    color: var(--color5 ); 
+}
+
 
 div.mobile-menu{
     margin-bottom: 18px;
@@ -1035,6 +1121,7 @@ div.mobile-menu{
 a.health-canada-link, a.health-canada-link:visited{
     font-size: 13px;
     color: var(--color15)!important;
+    text-decoration: none!important;
 }
 
 a.health-canada-link:hover{
@@ -1108,19 +1195,24 @@ a.health-canada-link:hover{
 
 
 
-.main-header .main-menu .widescreen > ul > li > a{
+.main-header .main-menu .widescreen > ul > li > a, 
+.main-header .main-menu .widescreen > ul > li > a:link, 
+.main-header .main-menu .widescreen > ul > li > a:visited, 
+.main-header .main-menu .widescreen > ul > li > a:active{
     padding-right: 5px;
     padding-left: 5px;
     font-size: 15px;
     font-weight: normal;
     letter-spacing: -0px;
-    color: var( --color4)
+    color: var( --color4);
+    text-decoration: none!important;
 }
 
 
 
 .main-header .main-menu .widescreen > ul > li > a:hover{
     color: var(--color5);
+    text-decoration: none!important;
 }
 
 
@@ -2152,6 +2244,7 @@ input.payment_option span{
 
 .our-story-banner{
     background-image: url( {{ 'VitruvianBW.jpg' | file_img_url: '878x504'}} );
+    
     width: 100%;
     height: 900px;
     background-size: cover;
@@ -2175,21 +2268,23 @@ input.payment_option span{
     color: white;
 }
 
-/* Inset text
+
 .leonardo-da-vinci{
     font-size: 29px;
     float: left;
+    margin-top: -40px;
     line-height: 30px;
     padding-right: 10px;
     padding-bottom: 2px;
     padding-top: 5px;
 }
-*/
 
+/*
 .leonardo-da-vinci{
     font-size: 29px;
     line-height: 30px;
 }
+*/
 
 .our-story-personnel{
     padding-top: 60px;
@@ -2259,7 +2354,9 @@ input.payment_option span{
      font-weight: bold;
 }
 
-
+div.quanity-cart-row.clearfix{
+    width: 300px!important;
+}
 
 
 
@@ -2498,20 +2595,21 @@ a.button:visited,
     margin-top: 10px;
     color: var( --color13 ); 
     height: 45px;
+    text-decoration: none!important;
 }
 
 .template-product article .add-to-cart .button{
-    height: 43px;
-    width: 231px;
+    height: 45px;
+    width: 250px;
 }
 
 div.add-to-cart{
-    width: 231px!important;
+    width: 280px!important;
 }
 
 /* Add to cart button container div */ 
 .add-to-cart{
-    padding-top: 21px;
+    padding-top: 20px;
 }
 
 a.standard-button:hover, .call-to-action, .button:hover, a.button:hover, .template-product article .add-to-cart .button:hover{
