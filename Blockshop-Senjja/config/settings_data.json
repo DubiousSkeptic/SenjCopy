@@ -106,7 +106,7 @@
           "header-account-show": true,
           "header-menu-center": false,
           "header-logo-center": false,
-          "logo": "shopify:\/\/shop_images\/SenjjaLogo.png",
+          "logo": "shopify:\/\/shop_images\/Senjja_Logo.png",
           "header--logo-height": "75",
           "header--promo-bar--show-on": "home",
           "header--promo-bar--text": "",
@@ -127,7 +127,7 @@
             "type": "about",
             "settings": {
               "about-title": "Senjja",
-              "text": "<p><strong>Copyright Exia Biomedical 2017.<\/strong> Senjja and S' are trademarks of&nbsp;Exia Biomedical<\/p>"
+              "text": "<p><strong>Copyright Exia Biomedical 2017.<\/strong> Senjja and S' are trademarks of Exia Biomedical<\/p>"
             }
           },
           "footer--subscribe": {

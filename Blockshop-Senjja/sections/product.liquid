@@ -78,7 +78,7 @@
               {% assign variant = product.selected_or_first_available_variant %}
               <span class="actual-price" itemprop="price">{{ variant.price | money }}</span> <span class="compare-price">{% if variant.price < variant.compare_at_price %}{{ 'products.was' | t }} {{ variant.compare_at_price | money }}{% endif %}</span>
             </p>
-            <p class="product-description">Amazing sex for you and your partner in a safe and easy to use product.</p>
+            <p class="product-description">Amazing sex for you and your partner in a safe, clinically proven, and easy to use product.</p>
           </div>
           <!--
           <div class="preorder-notice">
@@ -93,6 +93,16 @@
                 <li>Lasts 6-10 uses or more.</li>
               </ul>
           </div>
+          
+          <!-- Sizing guide warning --> 
+          <div class="product-sizing-guide-warning">
+              <p><b>WARNING:</b> To avoid possible injury, see the sizing guide before ordering.</p>
+          </div>
+          
+          <!-- Sizing Guide Link -->
+          <div class="product-sizing-guide-link">
+              <p><a href="#">SIZING GUIDE</a></p>
+          </div> 
         </div>
       </div>
 
